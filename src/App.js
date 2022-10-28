@@ -7,7 +7,7 @@ function App() {
   return (
     <section className='bg-[#EDF2F4] w-screen h-screen p-16'>
       <Card>
-        <h1 className="text-lg font-bold">Olá, seja bem vindo!</h1>
+        <h1 className="text-lg font-bold tracking-wider">Olá, seja bem vindo!</h1>
         
         <Input title="Usuário" placeholder="Ex: João" />
         <Input title="Senha" type="password" placeholder="Ex: 12345" />
@@ -17,7 +17,7 @@ function App() {
           <Button text="Entrar" />
         </div>
 
-        <a className="underline text-xs text-[#8D99AE]">Esqueceu a senha?</a>
+        <a className="underline text-sm text-[#8D99AE] cursor-pointer">Esqueceu a senha?</a>
       </Card>
     </section>
   );

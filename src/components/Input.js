@@ -8,7 +8,7 @@ export default (props) => {
             <input
                 type={type}
                 placeholder={props.placeholder}
-                className="w-full bg-[#EDF2F4] h-10 rounded-xl p-4 text-xs"
+                className="w-full bg-[#EDF2F4] h-11 rounded-xl p-4 text-xs"
             />
         </label>
     )
