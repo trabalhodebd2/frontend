@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card'
+import Button from './components/Button'
+import Input from './components/Input'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='bg-[#EDF2F4] w-screen h-screen p-16'>
+      <Card>
+        <h1 className="text-lg font-bold">Olá, seja bem vindo!</h1>
+        
+        <Input title="Usuário" placeholder="Ex: João" />
+        <Input title="Senha" type="password" placeholder="Ex: 12345" />
+
+        <div className="flex justify-between w-full my-8">
+          <Button text="Criar uma conta" color="#fff" />
+          <Button text="Entrar" />
+        </div>
+
+        <a className="underline text-xs text-[#8D99AE]">Esqueceu a senha?</a>
+      </Card>
+    </section>
   );
 }
 
