@@ -8,7 +8,7 @@ export default (props) => {
             <input
                 type={type}
                 placeholder={props.placeholder}
-                className="w-full bg-white-100 h-11 rounded-xl p-4"
+                className="w-full bg-white-100 h-11 rounded-xl p-4 text-xs"
             />
         </label>
     )
