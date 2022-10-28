@@ -1,14 +1,16 @@
 import React from "react";
 
 export default (props) => {
-    const color = props.bgColor || "#EF233C";
+    const full = props.full || false;
+    let textClass = "text-sm w-40 p-1 rounded-lg "
 
-    if (color == "#EF233C") {
-        const textClass = `bg-primary text-sm text-white w-40 p-1 rounded-lg`
+    if (full) {
+        textClass += "bg-primary text-white"
         return <button className={textClass}>{props.text}</button>
     }
 
-    const textClass = `bg-transparent text-sm text-primary w-40 p-1 rounded-lg 
-        border-2 border-solid border-primary`
+    textClass += `bg-transparent text-primary border-2 
+        border-solid border-primary`
+
     return <button className={textClass}>{props.text}</button>
 }
