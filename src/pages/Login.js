@@ -17,13 +17,13 @@ export default () => (
             <Input title="Senha" type="password" placeholder="Ex: 12345" />
 
             <div className="flex justify-between w-full my-8">
-                <Button text="Criar uma conta" />
+                <Button text="Criar uma conta" href="/cadastro" />
                 <Button text="Entrar" full={true} />
             </div>
 
             <a 
                 className="underline text-sm text-secondary cursor-pointer"
-                src="/verificacao"
+                href="/verificacao"
             >Esqueceu a senha?</a>
         </Card>
     </ContentForm>

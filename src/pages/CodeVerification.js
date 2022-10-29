@@ -11,16 +11,12 @@ export default () => (
     <ContentForm>
         <Logo />
         <Card>
-            <Title text="Criar Conta" />
+            <Title text="Digite o código de verificação" />
+            <Input title="Codigo" />
 
-            <Input title="Email" placeholder="Ex: joao@gmail.com" />
-            <Input title="Usuário" placeholder="Ex: João" />
-            <Input title="Senha" type="password" placeholder="Ex: 12345" />
-            <Input title="Digite a senha novamente" type="password" placeholder="Ex: 12345" />
-
-            <div className="flex justify-between w-full my-4">
+            <div className="flex justify-between w-full my-8">
                 <Button text="Cancelar" href="/login" />
-                <Button text="Criar" full={true} />
+                <Button text="Enviar" href="/recuperar_conta" full={true} />
             </div>
         </Card>
     </ContentForm>

@@ -6,11 +6,19 @@ export default (props) => {
 
     if (full) {
         textClass += "bg-primary text-white hover:bg-primary-dark duration-300"
-        return <button className={textClass}>{props.text}</button>
+        return (
+            <a href={props.href}>
+                <button className={textClass}>{props.text}</button>
+            </a>
+        )
     }
 
     textClass += `bg-transparent text-primary border-2 
         border-solid border-primary`
 
-    return <button className={textClass}>{props.text}</button>
+    return (
+        <a href={props.href}>
+            <button className={textClass}>{props.text}</button>
+        </a>
+    )
 }

@@ -15,8 +15,8 @@ export default () => (
             <Input title="Email" placeholder="Ex: João" />
 
             <div className="flex justify-between w-full my-8">
-                <Button text="Cancelar" />
-                <Button text="Enviar" full={true} />
+                <Button text="Cancelar" href="/login" />
+                <Button text="Enviar" full={true} href="/codigo_verificacao" />
             </div>
         </Card>
     </ContentForm>

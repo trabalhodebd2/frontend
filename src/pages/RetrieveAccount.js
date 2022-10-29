@@ -17,7 +17,7 @@ export default () => (
             <Input title="Digite a senha novamente" type="password" placeholder="Ex: 12345" />
 
             <div className="flex justify-between w-full my-4">
-                <Button text="Cancelar" />
+                <Button text="Cancelar" href="/login"/>
                 <Button text="Recuperar" full={true} />
             </div>
         </Card>
