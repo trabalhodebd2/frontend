@@ -5,7 +5,7 @@ export default (props) => {
     let textClass = "text-sm w-40 p-1 rounded-lg "
 
     if (full) {
-        textClass += "bg-primary text-white"
+        textClass += "bg-primary text-white hover:bg-primary-dark duration-300"
         return <button className={textClass}>{props.text}</button>
     }
 
