@@ -11,20 +11,13 @@ export default () => (
     <ContentForm>
         <Logo />
         <Card>
-            <Title text="Olá, seja bem vindo!" />
-            
-            <Input title="Usuário" placeholder="Ex: João" />
-            <Input title="Senha" type="password" placeholder="Ex: 12345" />
+            <Title text="Digite o email de verificação" />
+            <Input title="Email" placeholder="Ex: João" />
 
             <div className="flex justify-between w-full my-8">
-                <Button text="Criar uma conta" />
-                <Button text="Entrar" full={true} />
+                <Button text="Cancelar" />
+                <Button text="Enviar" full={true} />
             </div>
-
-            <a 
-                className="underline text-sm text-secondary cursor-pointer"
-                src="/verificacao"
-            >Esqueceu a senha?</a>
         </Card>
     </ContentForm>
 )
