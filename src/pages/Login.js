@@ -22,7 +22,8 @@ export default () => (
             </div>
 
             <a 
-                className="underline text-sm text-secondary cursor-pointer"
+                className="underline text-sm text-secondary 
+                    cursor-pointer hover:bg-secondary-dark"
                 href="/verificacao"
             >Esqueceu a senha?</a>
         </Card>

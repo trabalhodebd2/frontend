@@ -14,7 +14,7 @@ export default (props) => {
     }
 
     textClass += `bg-transparent text-primary border-2 
-        border-solid border-primary`
+        border-solid border-primary hover:bg-white-100`
 
     return (
         <a href={props.href}>
