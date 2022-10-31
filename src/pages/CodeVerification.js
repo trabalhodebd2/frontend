@@ -14,7 +14,7 @@ export default () => (
             <Title text="Digite o código de verificação" />
             <InputToken title="Codigo" />
 
-            <div className="flex justify-between w-full my-8">
+            <div className="flex justify-between w-full my-5 gap-2">
                 <Button text="Cancelar" href="/login" />
                 <Button text="Enviar" href="/recuperar_conta" full={true} />
             </div>

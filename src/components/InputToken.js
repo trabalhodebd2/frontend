@@ -8,7 +8,7 @@ export default (props) => {
         <input type="number" className={classText} min="1" max="9" />
     ))
     return (
-        <label className='flex flex-col w-full mt-5'>
+        <label className='flex flex-col w-full mt-2'>
             <p className="text-sm m-2">{props.title}</p>
             <div className="flex justify-content gap-3">
                 {listElement}

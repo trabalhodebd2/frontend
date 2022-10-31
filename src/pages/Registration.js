@@ -18,7 +18,7 @@ export default () => (
             <Input title="Senha" type="password" placeholder="Ex: 12345" />
             <Input title="Digite a senha novamente" type="password" placeholder="Ex: 12345" />
 
-            <div className="flex justify-between w-full my-4">
+            <div className="flex justify-between w-full my-5 gap-2">
                 <Button text="Cancelar" href="/login" />
                 <Button text="Criar" full={true} />
             </div>
