@@ -4,13 +4,14 @@ import ContentForm from '../components/ContentForm'
 import Button from '../components/Button'
 import Title from '../components/Title'
 import Input from '../components/Input'
-import Card from '../components/Card'
+import Form from '../components/Form'
 import Logo from '../components/Logo'
 
 export default () => (
     <ContentForm>
-        <Logo />
-        <Card>
+        <Form>
+            <Logo />
+            
             <Title text="Recuperar Conta" />
 
             <Input title="Digite a nova senha" type="password" placeholder="Ex: 12345" />
@@ -20,6 +21,6 @@ export default () => (
                 <Button text="Cancelar" href="/login"/>
                 <Button text="Recuperar" full={true} />
             </div>
-        </Card>
+        </Form>
     </ContentForm>
 )

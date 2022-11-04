@@ -4,8 +4,8 @@ import './InputToken.css'
 export default (props) => {
     const list = ['', '', '', '', '', '']
     const classText = `h-12 w-12 bg-white-100 rounded-xl text-lg text-center`
-    const listElement = list.map(element => (
-        <input type="number" className={classText} min="1" max="9" />
+    const listElement = list.map(() => (
+        <input type="number" className={classText} min="1" max="9" required />
     ))
     return (
         <label className='flex flex-col w-full mt-2'>
