@@ -3,7 +3,7 @@ import React from "react";
 import Button from './Button'
 
 export default (props) => {
-    const textCacel = props.textCacel || "Cancelar"
+    const textCacel = props.textCancel || "Cancelar"
     const text = props.text || "Enviar"
     return (
         <div className="flex justify-between w-full mt-6 gap-2">
