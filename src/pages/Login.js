@@ -17,13 +17,13 @@ export default () => (
             <Input title="Usuário" placeholder="Ex: João" />
             <Input title="Senha" type="password" placeholder="Ex: 12345" />
 
-            <div className="flex justify-between gap-2 w-full my-8">
+            <div className="flex justify-between gap-2 w-full mt-6">
                 <Button text="Criar uma conta" href="/cadastro" />
                 <Button text="Entrar" full={true} />
             </div>
 
             <a 
-                className="underline text-sm text-secondary 
+                className="underline text-base text-secondary mt-8 
                     cursor-pointer hover:text-secondary-dark duration-300"
                 href="/verificacao"
             >Esqueceu a senha?</a>

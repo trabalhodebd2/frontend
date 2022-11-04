@@ -2,7 +2,7 @@ import React from "react";
 
 export default (props) => {
     const full = props.full || false;
-    let textClass = `text-sm w-36 sm:w-40 p-1 rounded-lg duration-300 
+    let textClass = `text-base w-36 sm:w-40 p-1 rounded-lg duration-300 
         border-2 border-solid border-primary `
 
     if (full) {
