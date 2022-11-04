@@ -2,6 +2,6 @@ import React from "react";
 
 export default (props) => (
     <form 
-        className="bg-white w-1/3 max-w-xl m-auto p-10 rounded-2xl flex flex-col items-center"
+        className="bg-white m-auto p-10 rounded-2xl flex flex-col items-center form"
     >{props.children}</form>
 )

@@ -20,7 +20,7 @@ export default () => (
             <DivButton text="Entrar" textCancel="Criar uma conta" hrefCancel="/cadastro" />
 
             <a 
-                className="underline text-base text-secondary mt-8 
+                className="underline text-base text-secondary mt-7 
                     cursor-pointer hover:text-secondary-dark duration-300"
                 href="/verificacao"
             >Esqueceu a senha?</a>
