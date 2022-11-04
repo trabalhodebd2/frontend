@@ -2,7 +2,7 @@ import React from "react";
 
 import ContentForm from '../components/ContentForm'
 import InputToken from '../components/InputToken'
-import Button from '../components/Button'
+import DivButton from '../components/DivButton'
 import Title from '../components/Title'
 import Form from '../components/Form'
 import Logo from '../components/Logo'
@@ -15,10 +15,7 @@ export default () => (
             <Title text="Digite o código de verificação" />
             <InputToken title="Codigo" />
 
-            <div className="flex justify-between w-full mt-6 gap-2">
-                <Button text="Cancelar" href="/login" />
-                <Button text="Enviar" href="/recuperar_conta" full={true} />
-            </div>
+            <DivButton hrefCancel="/login" />
         </Form>
     </ContentForm>
 )

@@ -1,7 +1,7 @@
 import React from "react";
 
 import ContentForm from '../components/ContentForm'
-import Button from '../components/Button'
+import DivButton from '../components/DivButton'
 import Title from '../components/Title'
 import Input from '../components/Input'
 import Form from '../components/Form'
@@ -17,10 +17,7 @@ export default () => (
             <Input title="Digite a nova senha" type="password" placeholder="Ex: 12345" />
             <Input title="Digite a senha novamente" type="password" placeholder="Ex: 12345" />
 
-            <div className="flex justify-between w-full mt-6 gap-2">
-                <Button text="Cancelar" href="/login"/>
-                <Button text="Recuperar" full={true} />
-            </div>
+            <DivButton text="Recuperar" hrefCancel="/login" />
         </Form>
     </ContentForm>
 )
