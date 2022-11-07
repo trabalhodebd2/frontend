@@ -14,8 +14,8 @@ export default () => (
             
             <Title text="Olá, seja bem vindo!" />
             
-            <Input title="Usuário" placeholder="Ex: João" />
-            <Input title="Senha" type="password" placeholder="Ex: 12345" />
+            <Input title="Usuário" />
+            <Input title="Senha" type="password" />
 
             <DivButton text="Entrar" textCancel="Criar uma conta" hrefCancel="/cadastro" />
 

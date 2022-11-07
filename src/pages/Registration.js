@@ -15,9 +15,9 @@ export default () => (
             <Title text="Criar Conta" />
 
             <Input title="Email" placeholder="Ex: joao@gmail.com" />
-            <Input title="Usuário" placeholder="Ex: João" />
-            <Input title="Senha" type="password" placeholder="Ex: 12345" />
-            <Input title="Digite a senha novamente" type="password" placeholder="Ex: 12345" />
+            <Input title="Usuário" />
+            <Input title="Senha" type="password" />
+            <Input title="Digite a senha novamente" type="password" />
 
             <DivButton text="Criar" hrefCancel="/login" />
         </Form>

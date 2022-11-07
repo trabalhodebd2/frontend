@@ -14,8 +14,8 @@ export default () => (
             
             <Title text="Recuperar Conta" />
 
-            <Input title="Digite a nova senha" type="password" placeholder="Ex: 12345" />
-            <Input title="Digite a senha novamente" type="password" placeholder="Ex: 12345" />
+            <Input title="Digite a nova senha" type="password" />
+            <Input title="Digite a senha novamente" type="password" />
 
             <DivButton text="Recuperar" hrefCancel="/login" />
         </Form>
