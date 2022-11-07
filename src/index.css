@@ -29,11 +29,6 @@ code {
     monospace;
 }
 
-.form {
-  width: 100%;
-  max-width: 33rem;
-}
-
 @media (min-width: 2560px) {
   html {
     font-size: 200%;

@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import './InputToken.css'
 
 export default (props) => {
     const list = ['', '', '', '', '', '']
     const classText = `h-12 w-12 bg-white-100 rounded-xl text-lg 
-    text-center control-number`
+    text-center control-number token`
 
     const listElement = list.map(() => {
         const [value, setValue] = useState();
@@ -15,8 +14,11 @@ export default (props) => {
                 className={classText} 
                 onKeyDown={ event => { 
                     const input = event.key
+                    console.log(input)
                     if (Number(input) || input == "0") 
                         setValue(input)
+                    else if (input == "Backspace")
+                        setValue("")
                 }} 
                 value={value}
                 required 

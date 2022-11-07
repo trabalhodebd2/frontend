@@ -1,0 +1,9 @@
+.token,
+.token::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.form {
+    width: 100%;
+    max-width: 33rem;
+}
