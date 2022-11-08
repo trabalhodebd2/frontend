@@ -7,3 +7,8 @@
     width: 100%;
     max-width: 33rem;
 }
+
+.eye {
+    margin-left: -40px;
+    margin-top: 10px;
+}

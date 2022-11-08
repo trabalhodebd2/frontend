@@ -17,28 +17,26 @@ export default (props) => {
 const switchInput = (props, type, setType, img, setImg) => {
     const textClass = "bg-white-100 w-full h-12 rounded-xl p-4 text-sm"
     const picture = (
-        <picture className="w-2/12 flex justify-center items-center">
-            <img 
-                src={img}
-                className="h-7 cursor-pointer" 
-                onClick={() => {
-                    setImg(img == eye ? eyeOff : eye)
-                    setType(type == "text" ? "password" : "text")
-                }}
-            />
-        </picture>
+        <img 
+            src={img}
+            className="h-7 cursor-pointer eye" 
+            onClick={() => {
+                setImg(img == eye ? eyeOff : eye)
+                setType(type == "text" ? "password" : "text")
+            }}
+       />
     )
     switch (type) {
         case "text":
             const placeholder = props.placeholder || "Ex: João"
             if (img == eye) {
                 return (
-                    <div className="flex bg-white-100 rounded-xl">
+                    <div className="flex">
                         <input
                             required
                             type={type}
                             placeholder="Ex: 12345"
-                            className={textClass + " w-10/12"}
+                            className={textClass}
                         /> 
                         {picture}
                     </div>
@@ -54,12 +52,12 @@ const switchInput = (props, type, setType, img, setImg) => {
             )
         case "password":
             return (
-                <div className="flex bg-white-100 rounded-xl">
+                <div className="flex">
                     <input
                         required
                         type={type}
                         placeholder="Ex: 12345"
-                        className={textClass + " w-10/12"}
+                        className={textClass}
                     />
                     {picture}
                 </div>
