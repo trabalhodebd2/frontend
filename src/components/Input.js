@@ -19,7 +19,7 @@ const switchInput = (props, type, setType, img, setImg) => {
     const picture = (
         <img 
             src={img}
-            className="h-7 cursor-pointer absolute right-4 top-2.5" 
+            className="w-6 cursor-pointer absolute right-3.5 top-[11px]" 
             onClick={() => {
                 setImg(img == eye ? eyeOff : eye)
                 setType(type == "text" ? "password" : "text")
