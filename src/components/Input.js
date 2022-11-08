@@ -19,7 +19,7 @@ const switchInput = (props, type, setType, img, setImg) => {
     const picture = (
         <img 
             src={img}
-            className="h-7 cursor-pointer eye" 
+            className="h-7 cursor-pointer absolute right-4 top-2.5" 
             onClick={() => {
                 setImg(img == eye ? eyeOff : eye)
                 setType(type == "text" ? "password" : "text")
@@ -31,12 +31,12 @@ const switchInput = (props, type, setType, img, setImg) => {
             const placeholder = props.placeholder || "Ex: João"
             if (img == eye) {
                 return (
-                    <div className="flex">
+                    <div className="relative">
                         <input
                             required
                             type={type}
                             placeholder="Ex: 12345"
-                            className={textClass}
+                            className={textClass + " pr-12"}
                         /> 
                         {picture}
                     </div>
@@ -52,12 +52,12 @@ const switchInput = (props, type, setType, img, setImg) => {
             )
         case "password":
             return (
-                <div className="flex">
+                <div className="relative">
                     <input
                         required
                         type={type}
                         placeholder="Ex: 12345"
-                        className={textClass}
+                        className={textClass + " pr-12"}
                     />
                     {picture}
                 </div>
