@@ -62,5 +62,14 @@ const switchInput = (props, type, setType, img, setImg) => {
                     {picture}
                 </div>
             )
+        default:
+            return (
+                <input
+                    required
+                    type={type}
+                    placeholder={props.placeholder}
+                    className={textClass + " pr-12"}
+                />
+            )
     }
 }
