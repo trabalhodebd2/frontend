@@ -7,6 +7,7 @@ import Verification from './pages/Verification'
 import Loading from './pages/Loading'
 import Login from './pages/Login'
 import CodeVerification from './pages/CodeVerification'
+import Home from './pages/Home'
 
 export default () => (
     <Switch>
@@ -32,6 +33,10 @@ export default () => (
 
         <Route exact path="/recuperar_conta">
             <RetrieveAccount />
+        </Route>
+
+        <Route exact path="/home">
+            <Home />
         </Route>
     </Switch>
 )

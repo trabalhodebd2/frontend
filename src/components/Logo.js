@@ -10,7 +10,7 @@ export default (props) => {
 const switchLogo = (size) => {
     switch (size) {
         case "small":
-            return "h-4"
+            return "h-5"
         case "great":
             return "h-16"
         default:
