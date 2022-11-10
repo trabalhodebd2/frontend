@@ -4,11 +4,17 @@ import eye from "../img/eye.svg"
 import home from "../img/home.svg"
 import plus from "../img/plus-square.svg"
 
+// Solução Temporaria
+
+import eyeWhite from "../img/eye-white.svg"
+import homeWhite from "../img/home-white.svg"
+import plusWhite from "../img/plus-square-white.svg"
+
 export default (props) => {
     const list = [
-        {img: home, title: "Home", link: "/home"}, 
-        {img: eye, title: "Cadastrar um hemonúcleo", link: "/cadastrar_hemonucleo"}, 
-        {img: plus, title: "Visualizar um hemonúcleo", link: "/visualizar_hemonucleo"}
+        {img: home, title: "Home", link: "/home", img_white: homeWhite}, 
+        {img: eye, title: "Cadastrar um hemonúcleo", link: "/cadastrar_hemonucleo", img_white: eyeWhite}, 
+        {img: plus, title: "Visualizar um hemonúcleo", link: "/visualizar_hemonucleo", img_white: plusWhite}
     ]
 
     const listElement = list.map((element, index) => {
@@ -18,7 +24,7 @@ export default (props) => {
         if (props.position == index + 1) {
             return (
                 <button className={textClass + " bg-secondary text-white"}>
-                    <img src={element.img} className={classImg + " stroke-white"} />
+                    <img src={element.img_white} className={classImg + " stroke-white"} />
                     {element.title}
                 </button>
             )
