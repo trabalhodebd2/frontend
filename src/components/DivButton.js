@@ -8,6 +8,7 @@ export default (props) => {
 
     const textClass = "flex justify-between w-full mt-6 gap-8"
     const classSend = props.className || ""
+    
     return (
         <div className={textClass + " " + classSend}>
             <Button text={textCacel} href={props.hrefCancel} />

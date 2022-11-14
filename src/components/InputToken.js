@@ -1,11 +1,10 @@
 import React, { useState } from "react"
 
 export default (props) => {
-    const list = ['', '', '', '', '', '']
     const classText = `h-12 w-12 bg-white-100 rounded-xl text-lg 
     text-center control-number token`
 
-    const listElement = list.map(() => {
+    const listElement = Array(6).fill('').map(() => {
         const [value, setValue] = useState()
       
         return (

@@ -31,11 +31,9 @@ export default (props) => {
         }
 
         return (
-            <a href={element.link}>
-                <button className={textClass}>
-                    <img src={element.img} className={classImg} />
-                    {element.title}
-                </button>
+            <a href={element.link} className={textClass}>
+                <img src={element.img} className={classImg} />
+                {element.title}
             </a>
         )
     })
