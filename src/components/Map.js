@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 
 export default React.memo(() => {
   const { isLoaded } = useJsApiLoader({
@@ -13,12 +13,12 @@ export default React.memo(() => {
     border: '4px solid #fff',
     borderRadius: "15px",
     marginTop: "2rem"
-  };
+  }
   
   const center = {
     lat: -3.745,
     lng: -38.523
-  };
+  }
 
   const config = {
     setZoomControlsEnabled: false,

@@ -3,11 +3,6 @@
     appearance: none;
 }
 
-.form {
-    width: 100%;
-    max-width: 33rem;
-}
-
 .content {
     height: 100%;
     max-height: 100vh;

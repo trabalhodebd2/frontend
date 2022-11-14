@@ -1,12 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Registration from './pages/Registration'
+import RegistrationHemonucleus from './pages/RegistrationHemonucleus'
+import CodeVerification from './pages/CodeVerification'
 import RetrieveAccount from './pages/RetrieveAccount'
+import Registration from './pages/Registration'
 import Verification from './pages/Verification'
 import Loading from './pages/Loading'
 import Login from './pages/Login'
-import CodeVerification from './pages/CodeVerification'
 import Home from './pages/Home'
 
 export default () => (
@@ -37,6 +38,10 @@ export default () => (
 
         <Route exact path="/home">
             <Home />
+        </Route>
+
+        <Route exact path="/registrar_hemonucleo">
+            <RegistrationHemonucleus />
         </Route>
     </Switch>
 )

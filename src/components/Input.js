@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import eye from "../img/eye.svg"
 import eyeOff from "../img/eye-off.svg"
 

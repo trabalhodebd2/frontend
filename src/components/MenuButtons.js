@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 import eye from "../img/eye.svg"
 import home from "../img/home.svg"
@@ -13,7 +13,7 @@ import plusWhite from "../img/plus-square-white.svg"
 export default (props) => {
     const list = [
         {img: home, title: "Home", link: "/home", img_white: homeWhite}, 
-        {img: eye, title: "Cadastrar um hemonúcleo", link: "/cadastrar_hemonucleo", img_white: eyeWhite}, 
+        {img: eye, title: "Cadastrar um hemonúcleo", link: "/registrar_hemonucleo", img_white: eyeWhite}, 
         {img: plus, title: "Visualizar um hemonúcleo", link: "/visualizar_hemonucleo", img_white: plusWhite}
     ]
 

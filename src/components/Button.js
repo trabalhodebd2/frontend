@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 export default (props) => {
-    const full = props.full || false;
+    const full = props.full || false
     let textClass = `text-base w-1/2 h-9 rounded-lg duration-300 `
 
     if (full) {

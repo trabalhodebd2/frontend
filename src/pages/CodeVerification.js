@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 import ContentForm from '../components/ContentForm'
 import InputToken from '../components/InputToken'

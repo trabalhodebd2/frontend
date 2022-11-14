@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
-import UserPhoto from "../components/UserPhoto";
-import MenuLeft from "../components/MenuLeft";
-import Search from "../components/Search";
-import Cards from "../components/Cards";
+import UserPhoto from "../components/UserPhoto"
+import MenuLeft from "../components/MenuLeft"
+import Search from "../components/Search"
+import Cards from "../components/Cards"
 import Map from "../components/Map"
 
 export default () => (

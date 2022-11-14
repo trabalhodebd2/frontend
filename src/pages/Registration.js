@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 import ContentForm from '../components/ContentForm'
-import DivButton from "../components/DivButton";
+import DivButton from "../components/DivButton"
 import Title from '../components/Title'
 import Input from '../components/Input'
 import Form from '../components/Form'

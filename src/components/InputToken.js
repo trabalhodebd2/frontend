@@ -6,7 +6,7 @@ export default (props) => {
     text-center control-number token`
 
     const listElement = list.map(() => {
-        const [value, setValue] = useState();
+        const [value, setValue] = useState()
       
         return (
             <input 
