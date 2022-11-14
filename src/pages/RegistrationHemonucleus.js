@@ -25,7 +25,7 @@ export default () => (
                     <Input title="Longitude" placeholder=" " />
                 </div>
 
-                <DivButton text="Cadastrar" className="w-[28.75rem] self-end"/>
+                <DivButton text="Cadastrar" className="w-[28.75rem] self-end" />
             </Form>
         </section>
     </main>

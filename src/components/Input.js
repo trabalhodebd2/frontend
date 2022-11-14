@@ -16,6 +16,7 @@ export default (props) => {
 
 const switchInput = (props, type, setType, img, setImg) => {
     const textClass = "bg-white-100 w-full h-12 rounded-xl p-4 text-sm"
+    const value = props.value || ""
     const picture = (
         <img 
             src={img}
@@ -37,6 +38,7 @@ const switchInput = (props, type, setType, img, setImg) => {
                             type={type}
                             placeholder="Ex: 12345"
                             className={textClass + " pr-12"}
+                            value={value}
                         /> 
                         {picture}
                     </div>
@@ -48,6 +50,7 @@ const switchInput = (props, type, setType, img, setImg) => {
                     type={type}
                     placeholder={placeholder}
                     className={textClass}
+                    value={value}
                 /> 
             )
         case "password":
@@ -58,6 +61,7 @@ const switchInput = (props, type, setType, img, setImg) => {
                         type={type}
                         placeholder="Ex: 12345"
                         className={textClass + " pr-12"}
+                        value={value}
                     />
                     {picture}
                 </div>
@@ -69,6 +73,7 @@ const switchInput = (props, type, setType, img, setImg) => {
                     type={type}
                     placeholder={props.placeholder}
                     className={textClass + " pr-12"}
+                    value={value}
                 />
             )
     }

@@ -7,6 +7,7 @@ import RetrieveAccount from './pages/RetrieveAccount'
 import Registration from './pages/Registration'
 import Verification from './pages/Verification'
 import Loading from './pages/Loading'
+import Account from './pages/Account'
 import Login from './pages/Login'
 import Home from './pages/Home'
 
@@ -42,6 +43,10 @@ export default () => (
 
         <Route exact path="/registrar_hemonucleo">
             <RegistrationHemonucleus />
+        </Route>
+
+        <Route exact path="/account">
+            <Account />
         </Route>
     </Switch>
 )
