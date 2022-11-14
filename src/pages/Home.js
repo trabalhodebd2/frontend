@@ -7,9 +7,9 @@ import Cards from "../components/Cards";
 import Map from "../components/Map"
 
 export default () => (
-    <main className="min-h-screen w-screen bg-white-100 flex content">
+    <main className="bg-white-100 content">
         <MenuLeft button_position={1} />
-        <section className="w-full p-[60px]">
+        <section className="w-full h-full p-[3.75rem]">
             <div className="w-full mb-9">
                 <Search />
                 {/* <UserPhoto /> */}
