@@ -14,7 +14,7 @@ export default () => (
             
             <Title text="Criar Conta" />
 
-            <Input title="Email" type="email" placeholder="Ex: joao@gmail.com" />
+            <Input title="Email" type="email" />
             <Input title="Usuário" />
             <Input title="Senha" type="password" />
             <Input title="Digite a senha novamente" type="password" />

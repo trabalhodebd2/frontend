@@ -1,22 +1,27 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import eye from "../img/eye.svg"
 import eyeOff from "../img/eye-off.svg"
 
 export default (props) => {
-    const [img, setImg] = useState(eyeOff)
-    const [type, setType] = useState(props.type || "text")
-    const elementInput = switchInput(props, type, setType, img, setImg)
-    return (
-        <label className='flex flex-col w-full mt-2'>
-            <p className="text-base m-2">{props.title}</p>
-            {elementInput}
-        </label>
-    )
-}
-
-const switchInput = (props, type, setType, img, setImg) => {
     const textClass = "bg-white-100 w-full h-12 rounded-xl p-4 text-sm"
-    const value = props.value || ""
+
+    const [img, setImg] = useState(eyeOff)
+    const [placeholder, setPlaceholder] = useState()
+    const [className, setClassName] = useState(textClass)
+    const [value, setValue] = useState(props.value || "")
+    const [type, setType] = useState(props.type || "text")
+
+    useEffect(() => {
+        if (type === "text") {
+            setPlaceholder(props.placeholder || "Ex: João")
+        } else if (type === "password") {
+            setPlaceholder(props.placeholder || "Ex: 12345")
+            setClassName(className + " pr-12")
+        } else if (type === "email") {
+            setPlaceholder(props.placeholder || "Ex: joao@gmail.com")
+        }
+    }, [])
+    
     const picture = (
         <img 
             src={img}
@@ -27,54 +32,48 @@ const switchInput = (props, type, setType, img, setImg) => {
             }}
        />
     )
-    switch (type) {
-        case "text":
-            const placeholder = props.placeholder || "Ex: João"
-            if (img == eye) {
+
+    const input = (
+        <input
+            required
+            type={type}
+            placeholder={placeholder}
+            className={className}
+            value={value}
+            onChange={e => setValue(e.target.value)}
+        /> 
+    )
+
+    const switchInput = () => {
+        switch (type) {
+            case "text":
+                if (img === eye) {
+                    return (
+                        <div className="relative">
+                            {input}
+                            {picture}
+                        </div>
+                    )
+                }
+                return input
+            case "password":
                 return (
                     <div className="relative">
-                        <input
-                            required
-                            type={type}
-                            placeholder="Ex: 12345"
-                            className={textClass + " pr-12"}
-                            value={value}
-                        /> 
+                        {input}
                         {picture}
                     </div>
                 )
-            }
-            return (
-                <input
-                    required
-                    type={type}
-                    placeholder={placeholder}
-                    className={textClass}
-                    value={value}
-                /> 
-            )
-        case "password":
-            return (
-                <div className="relative">
-                    <input
-                        required
-                        type={type}
-                        placeholder="Ex: 12345"
-                        className={textClass + " pr-12"}
-                        value={value}
-                    />
-                    {picture}
-                </div>
-            )
-        default:
-            return (
-                <input
-                    required
-                    type={type}
-                    placeholder={props.placeholder}
-                    className={textClass + " pr-12"}
-                    value={value}
-                />
-            )
+            default:
+                return input
+        }
     }
+    
+    const elementInput = switchInput()
+
+    return (
+        <label className='flex flex-col w-full mt-2'>
+            <p className="text-base m-2">{props.title}</p>
+            {elementInput}
+        </label>
+    )
 }

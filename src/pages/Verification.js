@@ -13,7 +13,7 @@ export default () => (
             <Logo />
             
             <Title text="Digite o email de verificação" />
-            <Input title="Email" placeholder="Ex: joao@gmail.com" />
+            <Input title="Email" type="email" />
 
             <DivButton hrefCancel="/login" />
         </Form>
