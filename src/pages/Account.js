@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { isAuthenticated } from "../controller/auttentication"
 
 import UserPhoto from "../components/UserPhoto"
@@ -10,7 +10,7 @@ import DivButton from "../components/DivButton"
 
 export default () => {
     useEffect(() => {
-        if (!isAuthenticated()) return <Redirect to="/login/" />
+        if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
     return (

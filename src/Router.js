@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import RegistrationHemonucleus from './pages/RegistrationHemonucleus'
 import CodeVerification from './pages/CodeVerification'
@@ -13,45 +13,25 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 
 export default () => (
-    <Switch>
-        <Route exact path="/">
-            <Loading />
-        </Route>
+    <Routes>
+        <Route path="/" element={<Loading />} /> 
+        
+        <Route path="/login" element={<Login />} /> 
+        
+        <Route path="/cadastro" element={<Registration />} /> 
+        
+        <Route path="/verificacao" element={<Verification />} /> 
+        
+        <Route path="/codigo_verificacao" element={<CodeVerification />} /> 
+        
+        <Route path="/recuperar_conta" element={<RetrieveAccount />} /> 
+        
+        <Route path="/home" element={<Home />} /> 
+        
+        <Route path="/account" element={<Account />} /> 
+        
+        <Route path="/registrar_hemonucleo" element={<RegistrationHemonucleus />} /> 
 
-        <Route exact path="/login">
-            <Login />
-        </Route>
-
-        <Route exact path="/cadastro">
-            <Registration />
-        </Route>
-
-        <Route exact path="/verificacao">
-            <Verification />
-        </Route>
-
-        <Route exact path="/codigo_verificacao">
-            <CodeVerification />
-        </Route>
-
-        <Route exact path="/recuperar_conta">
-            <RetrieveAccount />
-        </Route>
-
-        <Route exact path="/home">
-            <Home />
-        </Route>
-
-        <Route exact path="/registrar_hemonucleo">
-            <RegistrationHemonucleus />
-        </Route>
-
-        <Route exact path="/account">
-            <Account />
-        </Route>
-
-        <Route exact path="/visualizar_hemonucleo">
-            <ViewHemonucleus />
-        </Route>
-    </Switch>
+        <Route path="/visualizar_hemonucleo" element={<ViewHemonucleus />} /> 
+    </Routes>
 )

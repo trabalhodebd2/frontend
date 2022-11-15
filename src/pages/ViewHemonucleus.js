@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { isAuthenticated } from "../controller/auttentication"
 
 import ListHemonucleus from "../components/ListHemonucleus"
@@ -12,7 +12,7 @@ import Form from "../components/Form"
 
 export default () => {
     useEffect(() => {
-        if (!isAuthenticated()) return <Redirect to="/login/" />
+        if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
     return (

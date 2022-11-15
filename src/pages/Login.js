@@ -1,5 +1,5 @@
 import React from "react"
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { signIn } from "../controller/auttentication"
 
 import ContentForm from '../components/ContentForm'
@@ -38,5 +38,5 @@ const loginUser = (event) => {
     const [name, pass] = [inputName.value, inputPass.value]
 
     signIn()
-    return <Redirect to="/home/"/>
+    return <Navigate to="/home/"/>
 }
