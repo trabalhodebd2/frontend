@@ -7,6 +7,7 @@ import ViewHemonucleus from './pages/ViewHemonucleus'
 import RetrieveAccount from './pages/RetrieveAccount'
 import Registration from './pages/Registration'
 import Verification from './pages/Verification'
+import NotFound from './pages/NotFound'
 import Loading from './pages/Loading'
 import Account from './pages/Account'
 import Login from './pages/Login'
@@ -33,5 +34,7 @@ export default () => (
         <Route path="/registrar_hemonucleo" element={<RegistrationHemonucleus />} /> 
 
         <Route path="/visualizar_hemonucleo" element={<ViewHemonucleus />} /> 
+
+        <Route path="*" element={<NotFound />} />
     </Routes>
 )
