@@ -1,4 +1,5 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
 
 import ContentForm from '../components/ContentForm'
 import DivButton from '../components/DivButton'
@@ -7,15 +8,23 @@ import Input from '../components/Input'
 import Form from '../components/Form'
 import Logo from '../components/Logo'
 
-export default () => (
-    <ContentForm>
-        <Form>
-            <Logo />
-            
-            <Title text="Digite o email de verificação" />
-            <Input title="Email" type="email" />
+export default () => {
+    const navigate = useNavigate()
 
-            <DivButton hrefCancel="/login" />
-        </Form>
-    </ContentForm>
-)
+    const verifyEmail = (event) => {
+        navigate("/codigo_verificacao")
+    }
+
+    return (
+        <ContentForm>
+            <Form callback={verifyEmail}>
+                <Logo />
+                
+                <Title text="Digite o email de verificação" />
+                <Input title="Email" type="email" />
+
+                <DivButton hrefCancel="/login" />
+            </Form>
+        </ContentForm>
+    )
+}

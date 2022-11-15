@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 export default (props) => {
     const full = props.full || false
@@ -13,8 +14,8 @@ export default (props) => {
         justify-center items-center border-2 border-solid border-primary`
 
     return (
-        <a href={props.href} className={textClass + classPluss}>
+        <Link to={props.href} className={textClass + classPluss}>
             {props.text}
-        </a>
+        </Link>
     )
 }

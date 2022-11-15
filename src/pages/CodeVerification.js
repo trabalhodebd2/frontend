@@ -1,4 +1,6 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
+import { getValuesOfInputs } from "../controller/elements"
 
 import ContentForm from '../components/ContentForm'
 import InputToken from '../components/InputToken'
@@ -7,15 +9,27 @@ import Title from '../components/Title'
 import Form from '../components/Form'
 import Logo from '../components/Logo'
 
-export default () => (
-    <ContentForm>
-        <Form>
-            <Logo />
-            
-            <Title text="Digite o código de verificação" />
-            <InputToken title="Codigo" />
+export default () => {
+    const navigate = useNavigate()
 
-            <DivButton hrefCancel="/login" />
-        </Form>
-    </ContentForm>
-)
+    const verifyCode = (event) => {
+        const form = event.currentTarget
+        const listValues = getValuesOfInputs(form)
+        const number = listValues.join()
+
+        navigate("/recuperar_conta")
+    }
+
+    return (
+        <ContentForm>
+            <Form callback={verifyCode}>
+                <Logo />
+                
+                <Title text="Digite o código de verificação" />
+                <InputToken title="Codigo" />
+
+                <DivButton hrefCancel="/login" />
+            </Form>
+        </ContentForm>
+    )
+}

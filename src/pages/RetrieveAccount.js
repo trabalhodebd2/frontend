@@ -1,4 +1,6 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
+import { getValuesOfInputs } from "../controller/elements"
 
 import ContentForm from '../components/ContentForm'
 import DivButton from '../components/DivButton'
@@ -7,17 +9,34 @@ import Input from '../components/Input'
 import Form from '../components/Form'
 import Logo from '../components/Logo'
 
-export default () => (
-    <ContentForm>
-        <Form>
-            <Logo />
-            
-            <Title text="Recuperar Conta" />
+export default () => {
+    const navigate = useNavigate()
 
-            <Input title="Digite a nova senha" type="password" />
-            <Input title="Digite a senha novamente" type="password" />
+    const registrePassword = (event) => {
+        event.preventDefault()
 
-            <DivButton text="Recuperar" hrefCancel="/login" />
-        </Form>
-    </ContentForm>
-)
+        const form = event.currentTarget
+        const [pass, retryPass] = getValuesOfInputs(form)
+
+        if (pass === retryPass) {
+            navigate("/login")
+        } else {
+            alert("As duas senhas devem ser iguais")
+        }
+    }
+
+    return (
+        <ContentForm>
+            <Form callback={registrePassword}>
+                <Logo />
+                
+                <Title text="Recuperar Conta" />
+
+                <Input title="Digite a nova senha" type="password" />
+                <Input title="Digite a senha novamente" type="password" />
+
+                <DivButton text="Recuperar" hrefCancel="/login" />
+            </Form>
+        </ContentForm>
+    )
+}
