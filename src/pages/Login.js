@@ -1,4 +1,6 @@
 import React from "react"
+import { Redirect } from 'react-router-dom'
+import { signIn } from "../controller/auttentication"
 
 import ContentForm from '../components/ContentForm'
 import DivButton from '../components/DivButton'
@@ -9,7 +11,7 @@ import Logo from '../components/Logo'
 
 export default () => (
     <ContentForm>
-        <Form>
+        <Form callback={loginUser}>
             <Logo />
             
             <Title text="Olá, seja bem vindo!" />
@@ -27,3 +29,14 @@ export default () => (
         </Form>
     </ContentForm>
 )
+
+const loginUser = (event) => {
+    const elementForm = event.currentTarget
+    const elements = elementForm.querySelectorAll("input")
+
+    const [inputName, inputPass] = [...elements]
+    const [name, pass] = [inputName.value, inputPass.value]
+
+    signIn()
+    return <Redirect to="/home/"/>
+}
