@@ -15,6 +15,7 @@ export default () => (
             <div className="w-full mb-9 flex justify-end">
                 <UserPhoto />
             </div>
+            
             <Form className="max-w-full items-start">
                 <Title text="Cadastrar um novo hemonúcleo" className="self-start" />
 
@@ -25,7 +26,11 @@ export default () => (
                     <Input title="Longitude" placeholder=" " />
                 </div>
 
-                <DivButton text="Cadastrar" className="w-[28.75rem] self-end" />
+                <DivButton 
+                    text="Cadastrar" 
+                    className="w-[28.75rem] self-end" 
+                    hrefCancel="/home" 
+                />
             </Form>
         </section>
     </main>

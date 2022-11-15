@@ -32,7 +32,7 @@ export default () => (
                 </section>
 
                 <section className="mt-36 flex justify-end">
-                    <DivButton text="Editar" className="w-[28.75rem]" />
+                    <DivButton text="Editar" className="w-[28.75rem]" hrefCancel="/home" />
                 </section>
             </section>
         </section>

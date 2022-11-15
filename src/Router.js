@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import RegistrationHemonucleus from './pages/RegistrationHemonucleus'
 import CodeVerification from './pages/CodeVerification'
+import ViewHemonucleus from './pages/ViewHemonucleus'
 import RetrieveAccount from './pages/RetrieveAccount'
 import Registration from './pages/Registration'
 import Verification from './pages/Verification'
@@ -47,6 +48,10 @@ export default () => (
 
         <Route exact path="/account">
             <Account />
+        </Route>
+
+        <Route exact path="/visualizar_hemonucleo">
+            <ViewHemonucleus />
         </Route>
     </Switch>
 )
