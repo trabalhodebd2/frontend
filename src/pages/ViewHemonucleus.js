@@ -1,5 +1,6 @@
 import React, {useEffect} from "react"
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
+import { getValuesOfInputs } from "../controller/elements"
 import { isAuthenticated } from "../controller/auttentication"
 
 import ListHemonucleus from "../components/ListHemonucleus"
@@ -11,9 +12,15 @@ import Title from "../components/Title"
 import Form from "../components/Form"
 
 export default () => {
+    const navigate = useNavigate()
+    
     useEffect(() => {
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
+
+    const viewHemo = (event) => {
+        navigate("/home")
+    }
 
     return (
         <main className="bg-white-100 content">
@@ -23,7 +30,7 @@ export default () => {
                     <UserPhoto />
                 </div>
 
-                <Form className="max-w-full">
+                <Form className="max-w-full" callback={viewHemo}>
                     <section className="mb-10 self-start w-full space-y-6">
                         <Title text="Pesquisar hemonúcleo pelo nome" />
                         <Search type={2} placeholder="Digite o nome do hemonúcleo" />

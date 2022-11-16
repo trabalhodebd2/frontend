@@ -1,5 +1,6 @@
 import React, {useEffect} from "react"
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
+import { getValuesOfInputs } from "../controller/elements"
 import { isAuthenticated } from "../controller/auttentication"
 
 import UserPhoto from "../components/UserPhoto"
@@ -11,9 +12,20 @@ import Form from "../components/Form"
 
 
 export default () => {
+    const navigate = useNavigate()
+
     useEffect(() => {
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
+
+    const registreHemo = (event) => {
+        event.preventDefault()
+
+        const form = event.currentTarget
+        const [name, long, lati] = getValuesOfInputs(form)
+
+        navigate("/home")
+    }
 
     return (
         <main className="bg-white-100 content">
@@ -23,7 +35,7 @@ export default () => {
                     <UserPhoto />
                 </div>
                 
-                <Form className="max-w-full items-start">
+                <Form className="max-w-full items-start" callback={registreHemo}>
                     <Title text="Cadastrar um novo hemonúcleo" className="self-start" />
 
                     <Input title="Nome" placeholder=" " />

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 import eye from "../img/eye.svg"
 import home from "../img/home.svg"
@@ -31,10 +32,10 @@ export default (props) => {
         }
 
         return (
-            <a href={element.link} className={textClass}>
+            <Link to={element.link} className={textClass}>
                 <img src={element.img} className={classImg} />
                 {element.title}
-            </a>
+            </Link>
         )
     })
 
