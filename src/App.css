@@ -1,6 +1,7 @@
-.token,
+.div-select select, .token,
 .token::-webkit-inner-spin-button {
     appearance: none;
+    -webkit-appearance: none;
 }
 
 .content {
@@ -9,3 +10,25 @@
     overflow-x: hidden;
     display: flex;
 }
+
+.div-select {
+    position: relative;   
+}
+
+.div-select::before, .div-select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    border-top: 2px solid #2B2D42;
+    width: 10px;
+}
+
+.div-select::before {
+    right: 26px;
+    transform: rotate(45deg);
+ }
+ 
+.div-select::after {
+    right: 20px;
+    transform: rotate(-45deg);
+ }
