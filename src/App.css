@@ -1,5 +1,5 @@
-.div-select select, .token,
-.token::-webkit-inner-spin-button {
+.div-select select, .input-number,
+.input-number::-webkit-inner-spin-button {
     appearance: none;
     -webkit-appearance: none;
 }

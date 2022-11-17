@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 export default (props) => {
     const classText = `h-12 w-12 bg-white-100 rounded-xl text-lg 
-    text-center control-number token`
+    text-center control-number input-number`
 
     const listElement = Array(6).fill('').map(() => {
         const [value, setValue] = useState()

@@ -24,8 +24,8 @@ export default (props) => {
         )
     }
     return (
-        <div className="relative">
-            <img src={search} className="absolute left-6 inset-y-4" />
+        <div className="relative w-full">
+            <img src={search} className="absolute left-6 inset-y-[1.12rem] h-6" />
             <input 
                 type="text" 
                 className={textClass + " pl-16"} 

@@ -20,9 +20,8 @@ export default () => {
 
     const editData = (event) => {
         const form = event.currentTarget
-        const [name, email, sex, 
-            dateBirth, telephone, pass] = getValuesOfInputs(form)
-        // const sex = form.querySelector("select")
+        const [name, email, dateBirth, telephone, pass] = getValuesOfInputs(form)
+        const sex = form.querySelector("select")
         
         navigate("/home")
     }
@@ -31,9 +30,9 @@ export default () => {
         <main className="bg-white-100 content">
             <MenuLeft />
             <section className="w-full h-full p-[3.75rem]">
-                <div className="w-full mb-9">
+                <div className="w-full mb-9 flex space-x-8">
                     <Search />
-                    {/* <UserPhoto /> */}
+                    <UserPhoto />
                 </div>
 
                 <Form className="max-w-full p-[3.75rem]" callback={editData}>

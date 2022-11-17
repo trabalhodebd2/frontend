@@ -40,9 +40,9 @@ export default () => {
 
                     <Input title="Nome" placeholder=" " />
 
-                    <div className="flex gap-10">
-                        <Input title="Latitude" placeholder=" " />
-                        <Input title="Longitude" placeholder=" " />
+                    <div className="flex gap-10 w-full">
+                        <Input title="Latitude" type="number" placeholder=" " />
+                        <Input title="Longitude" type="number" placeholder=" " />
                     </div>
 
                     <DivButton 

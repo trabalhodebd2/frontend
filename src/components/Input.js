@@ -3,7 +3,7 @@ import eye from "../img/eye.svg"
 import eyeOff from "../img/eye-off.svg"
 
 export default (props) => {
-    const textClass = "bg-white-100 w-full h-12 rounded-xl p-4 text-sm"
+    const textClass = ("bg-white-100 w-full h-12 rounded-xl p-4 text-sm")
 
     const [img, setImg] = useState(eyeOff)
     const [placeholder, setPlaceholder] = useState()
@@ -17,6 +17,9 @@ export default (props) => {
         } else if (type === "password") {
             setPlaceholder(props.placeholder || "Ex: 12345")
             setClassName(className + " pr-12")
+        } else if (type === "number") {
+            setClassName(className + " input-number")
+            setValue(value.toLocaleString('pt-BR'))
         } else if (type === "email") {
             setPlaceholder(props.placeholder || "Ex: joao@gmail.com")
         }
