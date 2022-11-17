@@ -19,6 +19,7 @@ export default () => {
     }, [])
 
     const viewHemo = (event) => {
+        event.preventDefault()
         navigate("/home")
     }
 
