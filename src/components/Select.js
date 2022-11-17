@@ -14,7 +14,7 @@ export default (props) => {
     })
     
     return (
-        <label className='flex flex-col w-full mt-2'>
+        <label className="flex flex-col w-full mt-2">
             <p className="text-base m-2">{props.title}</p>
             <div className="div-select">
                 <select className={textClass}>

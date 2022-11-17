@@ -19,8 +19,8 @@ export default (props) => {
     ]
 
     const listElement = list.map((element, index) => {
-        let textClass = "bg-white-100 w-full h-12 p-3 rounded-2xl flex items-center"
-        let classImg = "w-5 mr-4"
+        const textClass = "bg-white-100 w-full h-12 p-3 rounded-2xl flex items-center"
+        const classImg = "w-5 mr-4"
 
         if (props.position == index + 1) {
             return (

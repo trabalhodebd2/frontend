@@ -2,8 +2,8 @@ import React from "react"
 
 export default (props) => {
     const classSend = props.className || ""
-    const textClass = " text-xl font-bold tracking-wider"
+    const textClass = "text-xl font-bold tracking-wider " + classSend
     return (
-        <h1 className={textClass + classSend}>{props.text}</h1>
+        <h1 className={textClass}>{props.text}</h1>
     )
 }

@@ -10,7 +10,7 @@ export default (props) => {
     if (size === "small") {
         return (
             <a href="account">
-                <img src={photoUserSmall} className={textClass} alt="Usuario" />
+                <img src={photoUserSmall} className={textClass + " ml-8"} alt="Usuario" />
            </a>
         )
     }
@@ -23,9 +23,9 @@ export default (props) => {
                 alt="Foto de Usuario"
             />
             <div 
-                className={`absolute h-full w-full bg-secondary text-white text-lg 
-                    underline grid place-items-center duration-300 top-0 font-bold
-                    rounded-full cursor-pointer opacity-0 hover:opacity-[85%]`}
+                className={("absolute h-full w-full bg-secondary text-white text-lg"
+                    + " underline grid place-items-center duration-300 top-0 font-bold"
+                    + " rounded-full cursor-pointer opacity-0 hover:opacity-[85%]")}
             >Alterar foto</div>
         </div>
     )

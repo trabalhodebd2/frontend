@@ -16,8 +16,8 @@ export default (props) => {
                     className={textClass + " bg-white-100 text-sm"}
                     placeholder={placeholder} 
                 />
-                <button className={`h-[3.75rem] w-[3.75rem] rounded-2xl 
-                    grid place-items-center bg-secondary`}>
+                <button className={("h-[3.75rem] w-[3.75rem] rounded-2xl"
+                    + " grid place-items-center bg-secondary")}>
                     <img src={searchWhite} className="h-6" />
                 </button>
             </div>

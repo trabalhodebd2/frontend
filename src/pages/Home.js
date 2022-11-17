@@ -18,7 +18,7 @@ export default () => {
         <main className="bg-white-100 content">
             <MenuLeft button_position={1} />
             <section className="w-full h-full p-[3.75rem]">
-                <div className="w-full mb-9 flex space-x-8">
+                <div className="w-full mb-9 flex">
                     <Search />
                     <UserPhoto />
                 </div>
