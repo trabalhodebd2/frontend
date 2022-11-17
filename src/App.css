@@ -31,4 +31,17 @@
 .div-select::after {
     right: 20px;
     transform: rotate(-45deg);
- }
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 16px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    margin: 12px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #8D99AE;
+    border-radius: 3px;
+}
