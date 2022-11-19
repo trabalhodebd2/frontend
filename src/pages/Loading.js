@@ -15,7 +15,7 @@ export default () => {
     }, [])
 
     return (
-        <section className="flex items-center h-screen">
+        <section className="grid place-items-center h-screen w-full">
             <Logo size="great" />
         </section>
     )
