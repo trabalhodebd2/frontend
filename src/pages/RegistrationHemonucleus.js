@@ -41,6 +41,11 @@ export default () => {
                     <Input title="Nome" placeholder=" " />
 
                     <div className="flex gap-10 w-full">
+                        <Input title="Estado" placeholder=" " />
+                        <Input title="Cidade" placeholder=" " />
+                    </div>
+                    
+                    <div className="flex gap-10 w-full">
                         <Input title="Latitude" type="number" placeholder=" " />
                         <Input title="Longitude" type="number" placeholder=" " />
                     </div>
