@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import { getValuesOfInputs } from "../controller/elements"
+import { getValuesOfInputs } from "../services/elements"
 
 import ContentForm from '../components/ContentForm'
 import DivButton from '../components/DivButton'

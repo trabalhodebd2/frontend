@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie'
 
-export const signIn = () => {
-    Cookies.set('token', 'token-temporario', {
+export const signIn = (token) => {
+    Cookies.set('token', token, {
         expires: 1
     })
 }

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { signOut } from "../controller/auttentication"
+import { signOut } from "../services/auttentication"
 
 import logOut from "../img/log-out.svg"
 
