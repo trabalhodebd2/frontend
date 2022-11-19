@@ -23,7 +23,7 @@ export default () => {
     }
 
     return (
-        <main className="bg-white-100 content">
+        <>
             <MenuLeft button_position={3} />
             <section className="w-full h-full p-[3.75rem]">
                 <div className="w-full mb-9 flex justify-end">
@@ -48,6 +48,6 @@ export default () => {
                     />
                 </Form>
             </section>
-        </main>
+        </>
     )
 }

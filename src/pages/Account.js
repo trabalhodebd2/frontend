@@ -27,7 +27,7 @@ export default () => {
     }
 
     return (
-        <main className="bg-white-100 content">
+        <>
             <MenuLeft />
             <section className="w-full h-full p-[3.75rem]">
                 <div className="w-full mb-9 flex">
@@ -65,6 +65,6 @@ export default () => {
                         />
                 </Form>
             </section>
-        </main>
+        </>
     )
 }
