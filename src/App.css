@@ -45,3 +45,31 @@
     background: #8D99AE;
     border-radius: 3px;
 }
+
+/* Pagina de Conteudo */
+
+.page-start {
+    animation: start-page .3s ease;
+}
+
+.page-end {
+    animation: end-page .3s ease;
+}
+
+@keyframes start-page {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes end-page {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
