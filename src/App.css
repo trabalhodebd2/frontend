@@ -12,6 +12,8 @@
     display: flex;
 }
 
+/* Estilização da tag select */
+
 .div-select {
     position: relative;   
 }
@@ -34,6 +36,8 @@
     transform: rotate(-45deg);
 }
 
+/* classe para usar scroll modificado */
+
 .scrollbar::-webkit-scrollbar {
     width: 16px;
 }
@@ -47,12 +51,10 @@
     border-radius: 3px;
 }
 
-.page-start {
-    animation: start-page .3s ease;
-}
+/* Animação de entrar na pagina */
 
-.page-end {
-    animation: end-page .3s ease;
+.page-start {
+    animation: start-page .5s ease;
 }
 
 @keyframes start-page {
@@ -61,14 +63,5 @@
     }
     100% {
         opacity: 100%;
-    }
-}
-
-@keyframes end-page {
-    0% {
-        opacity: 100%;
-    }
-    100% {
-        opacity: 0;
     }
 }

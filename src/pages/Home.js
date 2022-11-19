@@ -17,7 +17,7 @@ export default () => {
     return (
         <>
             <MenuLeft button_position={1} />
-            <section className="w-full h-full p-[3.75rem]">
+            <section className="w-full h-full p-[3.75rem] page-start">
                 <div className="w-full mb-9 flex">
                     <Search />
                     <UserPhoto />
