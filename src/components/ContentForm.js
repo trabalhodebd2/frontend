@@ -1,12 +1,7 @@
 import React, { useState } from "react"
 
-export default (props) => {
-    const [classAnimation, setClassAnimation] = useState("page-start")
-    const textClass = ("h-screnn w-full grid place-items-center"
-        + ` ${classAnimation}`)
-    return (
-        <section className={textClass}>
-            {props.children}
-        </section>
-    )
-}
+export default (props) => (
+    <section className="h-screnn w-full grid place-items-center page-start">
+        {props.children}
+    </section>
+)
