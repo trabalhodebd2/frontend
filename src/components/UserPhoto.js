@@ -23,7 +23,7 @@ export default (props) => {
                 alt="Foto de Usuario"
             />
             <div 
-                className={("absolute h-full w-full bg-secondary text-white text-lg"
+                className={("absolute h-full w-full bg-secondary text-white text-base"
                     + " underline grid place-items-center duration-300 top-0 font-bold"
                     + " rounded-full cursor-pointer opacity-0 hover:opacity-[85%]")}
             >Alterar foto</div>
