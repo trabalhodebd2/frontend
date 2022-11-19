@@ -6,6 +6,7 @@ import { isAuthenticated } from "../controller/auttentication"
 import UserPhoto from "../components/UserPhoto"
 import DivButton from "../components/DivButton"
 import MenuLeft from "../components/MenuLeft"
+import Select from "../components/Select"
 import Title from '../components/Title'
 import Input from '../components/Input'
 import Form from "../components/Form"
@@ -41,8 +42,16 @@ export default () => {
                     <Input title="Nome" placeholder=" " />
 
                     <div className="flex gap-10 w-full">
-                        <Input title="Estado" placeholder=" " />
-                        <Input title="Cidade" placeholder=" " />
+                        <Select 
+                            title="Estado" 
+                            options={[
+                            {name: "Paraiba", value: "PB"}, 
+                            {name: "Pernanbuco", value: "PE"}
+                        ]} />
+                        <Select title="Cidade" options={[
+                            {name: "Sousa", value: "Sousa"}, 
+                            {name: "Cajazeiras", value: "Cajazeiras"}
+                        ]} />
                     </div>
                     
                     <div className="flex gap-10 w-full">
