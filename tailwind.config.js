@@ -18,4 +18,9 @@ module.exports = {
       'success': '#6DDC78',
     }
   },
+  extend: {
+    boxShadow: {
+      DEFAULT: '0px 4px 24px rgba(43, 45, 66, 0.2)'
+    } 
+  }
 }
