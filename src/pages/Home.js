@@ -11,10 +11,12 @@ import Map from "../components/Map"
 
 export default () => {
     const [listHemos, setListHemos] = useState([])
+    
+    const promise = new Promise((resolve) => resolve());
 
     useEffect(() => {
-        setListHemos(getHemos())
-        console.log(listHemos)
+        promise.then(setListHemos(getHemos()))
+            .then(console.log(listHemos))
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
         

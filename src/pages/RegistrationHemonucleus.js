@@ -19,18 +19,18 @@ export default () => {
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
-    const registreHemo = (event) => {
+    const registreHemo = async (event) => {
         event.preventDefault()
 
         const form = event.currentTarget
         const [name, long, lati] = getValuesOfInputs(form)
 
-        const objHemo = postHemos(name, long, lati)
+        const objHemo = await postHemos(name, long, lati)
 
-        if (objHemo.mensage) {
-            alert(objHemo.mensage)
-        } else {
+        if (objHemo.title) {
             navigate("/home")
+        } else {
+            alert("Ocorreu um error ao registrar hemonucleo")
         }
     }
 

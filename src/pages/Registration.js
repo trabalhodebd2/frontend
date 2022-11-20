@@ -26,6 +26,8 @@ export default () => {
             return;
         }
 
+        const promise = new Promise((resolve) => resolve());
+
         const obj = await postUser(email, name, pass)
 
         if (obj.username) {
@@ -33,8 +35,7 @@ export default () => {
             signIn(token.refresh)
             navigate("/home")
         } else {
-            alert(obj.error)
-            console.log(obj)
+            alert(obj.email)
         }
     }
 

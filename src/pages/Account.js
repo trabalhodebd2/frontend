@@ -30,7 +30,6 @@ export default () => {
     useEffect(() => {
         setUser(promise
             .then(getUser)
-            .then(e => console.log(e))
         )
         if (!isAuthenticated()) return navigate("/login")
     }, [])

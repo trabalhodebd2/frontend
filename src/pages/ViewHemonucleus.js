@@ -14,10 +14,12 @@ import Form from "../components/Form"
 export default () => {
     const navigate = useNavigate()
 
-    // const [listHemos, setListHemos] = useState([])
+    const [listHemos, setListHemos] = useState([])
+    
+    const promise = new Promise((resolve) => resolve());
     
     useEffect(() => {
-        // setListHemos(getHemos());
+        promise.then(setListHemos(getHemos()));
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
@@ -42,7 +44,7 @@ export default () => {
 
                     <section className="self-start w-full space-y-6">
                         <Title text="Pesquisar hemonúcleo pelo nome" />
-                        <ListHemonucleus  />
+                        <ListHemonucleus list={listHemos} />
                     </section>
 
                     <DivButton 
