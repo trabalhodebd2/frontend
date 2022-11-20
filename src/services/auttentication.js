@@ -1,17 +1,15 @@
 import Cookies from 'js-cookie'
 
 export const signIn = (token) => {
-    Cookies.set('token', token, {
-        expires: 1
-    })
+    Cookies.set("token", token)
 }
 
 export const signOut = () => {
-    Cookies.remove('token')
+    Cookies.remove("token")
 }
 
 export const isAuthenticated = () => {
-    const token = Cookies.get('token')
+    const token = Cookies.get("token")
     
     if (token) {
         return true

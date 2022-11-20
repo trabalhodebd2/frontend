@@ -22,7 +22,7 @@ export default () => {
         const token = await getToken(name, pass)
         
         if (token.access) {
-            signIn(token)
+            signIn(token.refresh)
             navigate("/home")
         } else {
             alert("O usuario ou senha estão errados")
