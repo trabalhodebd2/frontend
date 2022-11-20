@@ -1,7 +1,7 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
-import { getValuesOfInputs } from "../services/elements"
 import { isAuthenticated } from "../services/auttentication"
+import { getHemos } from "../services/crudHemos"
 
 import ListHemonucleus from "../components/ListHemonucleus"
 import DivButton from "../components/DivButton"
@@ -13,8 +13,11 @@ import Form from "../components/Form"
 
 export default () => {
     const navigate = useNavigate()
+
+    // const [listHemos, setListHemos] = useState([])
     
     useEffect(() => {
+        // setListHemos(getHemos());
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
@@ -39,7 +42,7 @@ export default () => {
 
                     <section className="self-start w-full space-y-6">
                         <Title text="Pesquisar hemonúcleo pelo nome" />
-                        <ListHemonucleus />
+                        <ListHemonucleus  />
                     </section>
 
                     <DivButton 

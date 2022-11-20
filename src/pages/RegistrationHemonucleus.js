@@ -1,7 +1,8 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
 import { getValuesOfInputs } from "../services/elements"
 import { isAuthenticated } from "../services/auttentication"
+import { postHemos } from "../services/crudHemos"
 
 import UserPhoto from "../components/UserPhoto"
 import DivButton from "../components/DivButton"
@@ -10,7 +11,6 @@ import Select from "../components/Select"
 import Title from '../components/Title'
 import Input from '../components/Input'
 import Form from "../components/Form"
-
 
 export default () => {
     const navigate = useNavigate()
@@ -25,7 +25,13 @@ export default () => {
         const form = event.currentTarget
         const [name, long, lati] = getValuesOfInputs(form)
 
-        navigate("/home")
+        const objHemo = postHemos(name, long, lati)
+
+        if (objHemo.mensage) {
+            alert(objHemo.mensage)
+        } else {
+            navigate("/home")
+        }
     }
 
     return (

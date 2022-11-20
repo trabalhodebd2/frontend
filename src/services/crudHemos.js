@@ -2,13 +2,14 @@ import { refreshToken } from "./token";
 
 const hostApi = process.env.REACT_APP_LINK_API
 
-export const postUser = async (email, username, password) => {
+export const postHemos = async (title, latitude, longitude) => {
     const config = {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
+            // "Authorization": `Bearer ${await refreshToken()}`
 		},
-        body: JSON.stringify({email, username, password})
+        body: JSON.stringify({title, latitude, longitude})
 	};
 
     const obj = await fetch(`${hostApi}/api/users/`, config)
@@ -18,16 +19,16 @@ export const postUser = async (email, username, password) => {
     return obj
 }
 
-export const getUser = async () => {
+export const getHemos = async () => {
     const config = {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
-            "Authorization": `Bearer ${await refreshToken()}`
+            // "Authorization": `Bearer ${await refreshToken()}`
 		},
 	};
 
-    const obj = await fetch(`${hostApi}/api/users/me/`, config)
+    const obj = await fetch(`${hostApi}/api/hemos/`, config)
         .then(res => res.json())
         .catch(err => console.log(`Ocorreu um error: ${err}`))
 

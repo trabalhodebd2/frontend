@@ -1,7 +1,11 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
+import PreviousMap from 'postcss/lib/previous-map'
 
-export default React.memo(() => {
+export default React.memo((props) => {
+  const listHemos = props.listHemos
+  console.log(listHemos)
+  
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_KEY_GOOGLE_MAPS

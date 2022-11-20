@@ -1,13 +1,13 @@
 import React from "react";
 
-export default () => {
-    const list = ["Hemonúcleo de Sousa", "Hemonúcleo de Cajazeiras", "Hemonúcleo de Pombal", 
-        "Hemonúcleo de Fortaleza", "Hemonúcleo de João Pessoa", "Hemonúcleo de Recife"]
+export default (props) => {
+    const list = props.list
     const textClass = "border-secondary border-solid text-xl"
     const classIndex = textClass + " border-r w-10 py-2 text-secondary grid place-items-center"
     const classInfoName = textClass + " p-2 pl-3 text-secondary-dark"
 
     const listElements = list.map((element, index) => {
+        console.log(element)
         if (index === 0) return (
             <li className={textClass + " flex"}>
                 <p className={classIndex}>{1}</p>
