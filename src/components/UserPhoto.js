@@ -20,7 +20,7 @@ export default (props) => {
                     alt="Usuario" 
                     onClick={() => setActive(!active)}
                 />
-                <CardDataProfile parentToChild={active} />
+                {/* <CardDataProfile parentToChild={active} /> */}
             </>
         )
     }

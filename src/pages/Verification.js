@@ -16,7 +16,7 @@ export default () => {
     }
 
     return (
-        <ContentForm>
+        <>
             <Form callback={verifyEmail}>
                 <Logo />
                 
@@ -25,6 +25,6 @@ export default () => {
 
                 <DivButton hrefCancel="/login" />
             </Form>
-        </ContentForm>
+        </>
     )
 }

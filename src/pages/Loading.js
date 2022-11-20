@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom'
 import React, { useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
+import { isAuthenticated } from '../services/auttentication'
 
 import Logo from "../components/Logo"
-import { isAuthenticated } from '../services/auttentication'
 
 export default () => {
     const navigate = useNavigate()

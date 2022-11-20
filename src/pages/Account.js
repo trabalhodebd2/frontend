@@ -1,7 +1,8 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
 import { isAuthenticated } from "../services/auttentication"
 import { getValuesOfInputs } from "../services/elements"
+import { getUser } from "../services/crudUser"
 
 import UserPhoto from "../components/UserPhoto"
 import DivButton from "../components/DivButton"
@@ -12,11 +13,21 @@ import Input from "../components/Input"
 import Form from "../components/Form"
 
 export default () => {
-    useEffect(() => {
-        if (!isAuthenticated()) return <Navigate to="/login/" />
-    }, [])
-
     const navigate = useNavigate()
+
+    const [user, setUser] = useState({
+        username: "José da Silva Júnior",
+        email: "jose@gmail.com",
+        sex: "M",
+        date_birthday: "2002-05-21",
+        phone: "+55 (83) 99101-7224",
+        password: "************"
+    })
+
+    useEffect(() => {
+        setUser(getUser())
+        if (!isAuthenticated()) return navigate("/login")
+    }, [])
 
     const editData = (event) => {
         const form = event.currentTarget
@@ -42,19 +53,19 @@ export default () => {
                         </picture>
 
                         <section className="grid grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
-                            <Input title="Nome" value="José da Silva Júnior" />
-                            <Input title="email" type="email" value="jose@gmail.com" />
+                            <Input title="Nome" value={user.username} />
+                            <Input title="email" type="email" value={user.email} />
                             <Select 
                                 title="Sexo" 
                                 options={[
                                     {name: "Masculino", value: "M"}, 
                                     {name: "Feminino", value: "F"}
                                 ]} 
-                                value="M"
+                                value={user.sex}
                             />
-                            <Input title="Data de nascimento" type="date" value="2002-05-21" />
-                            <Input title="Número do Telefone" value="+55 (83) 99101-7224" />
-                            <Input title="Senha" type="password" value="************" />
+                            <Input title="Data de nascimento" type="date" value={user.date_birthday} />
+                            <Input title="Número do Telefone" value={user.phone} />
+                            <Input title="Senha" type="password" value={user.password} />
                         </section>
                     </section>
 
