@@ -24,10 +24,11 @@ export default () => {
 
         const form = event.currentTarget
         const [name, long, lati] = getValuesOfInputs(form)
+        // const [] = getValuesOfSelect(form)
 
         const objHemo = await postHemos(name, long, lati)
 
-        if (objHemo.title) {
+        if (objHemo.id) {
             navigate("/home")
         } else {
             alert("Ocorreu um error ao registrar hemonucleo")

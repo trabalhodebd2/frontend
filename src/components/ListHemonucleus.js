@@ -13,14 +13,14 @@ export default (props) => {
             <label className={textClass + " flex"}>
                 <input type="radio" value={element.id} className="hidden" />
                 <p className={classIndex}>{1}</p>
-                <p className={classInfoName}>{element.title}</p>
+                <p className={classInfoName}>{element.properties.title}</p>
             </label>
         )
         return (
             <label className={textClass + " flex border-t"}>
                 <input type="radio" value={element.id} className="hidden" />
                 <p className={classIndex}>{index + 1}</p>
-                <p className={classInfoName}>{element.title}</p>
+                <p className={classInfoName}>{element.properties.title}</p>
             </label>
         )
     })

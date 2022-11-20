@@ -3,7 +3,7 @@ import { refreshToken } from "./token";
 const hostApi = process.env.REACT_APP_LINK_API
 
 export const postHemos = async (title, lat, long) => {
-    const geometry = `POINT(${lat} ${long})`
+    const geometry = { "type": "Point", "coordinates": [Number(lat), Number(long)] }
 
     const config = {
 		method: "POST",
