@@ -15,11 +15,15 @@ export default () => {
     const navigate = useNavigate()
 
     const [listHemos, setListHemos] = useState([])
-    
-    const promise = new Promise((resolve) => resolve());
-    
+
     useEffect(() => {
-        promise.then(setListHemos(getHemos()));
+        const updateList = async () => {
+            const allHemos = await getHemos()
+            setListHemos(allHemos)
+        }
+
+        updateList()
+
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
