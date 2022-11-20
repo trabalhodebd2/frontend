@@ -11,6 +11,7 @@ import Select from "../components/Select"
 import Search from "../components/Search"
 import Input from "../components/Input"
 import Form from "../components/Form"
+import { refreshToken } from "../services/token"
 
 export default () => {
     const navigate = useNavigate()
@@ -24,8 +25,13 @@ export default () => {
         password: "************"
     })
 
+    const promise = new Promise((resolve) => resolve());
+
     useEffect(() => {
-        setUser(getUser())
+        setUser(promise
+            .then(getUser)
+            .then(e => console.log(e))
+        )
         if (!isAuthenticated()) return navigate("/login")
     }, [])
 

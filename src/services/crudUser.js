@@ -23,7 +23,7 @@ export const getUser = async () => {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
-            "Authorization": `Bearer ${refreshToken()}`
+            // "Authorization": `Bearer ${await refreshToken()}`
 		},
 	};
 

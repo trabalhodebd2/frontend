@@ -19,18 +19,17 @@ export const getToken = async (username, password) => {
 }
 
 export const refreshToken = () => {
-    const token = Cookies.get("token")
-    const refrash = token.refrash
+    const refresh = Cookies.get("token")
 
     const config = {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
 		},
-        body: JSON.stringify({refrash})
+        body: JSON.stringify({refresh})
 	};
 
-    const newToken = fetch(`${hostApi}/api/token_refresh/`, config)
+    const newToken = fetch(`${hostApi}/api/refresh_token/`, config)
         .then(res => res.json())
         .catch(err => console.log(`Ocorreu um error: ${err}`))
 
