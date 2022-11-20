@@ -1,7 +1,7 @@
 import React, {useEffect} from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
-import { getValuesOfInputs } from "../controller/elements"
-import { isAuthenticated } from "../controller/auttentication"
+import { getValuesOfInputs } from "../services/elements"
+import { isAuthenticated } from "../services/auttentication"
 
 import UserPhoto from "../components/UserPhoto"
 import DivButton from "../components/DivButton"

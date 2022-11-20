@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
-import { isAuthenticated } from "../controller/auttentication"
+import { getValuesOfInputs } from "../services/elements"
+import { isAuthenticated } from "../services/auttentication"
 
 import ListHemonucleus from "../components/ListHemonucleus"
 import DivButton from "../components/DivButton"

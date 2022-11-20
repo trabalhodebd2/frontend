@@ -1,6 +1,6 @@
 import React, {useEffect} from "react"
 import { Navigate } from 'react-router-dom'
-import { isAuthenticated } from "../controller/auttentication"
+import { isAuthenticated } from "../services/auttentication"
 
 import UserPhoto from "../components/UserPhoto"
 import MenuLeft from "../components/MenuLeft"

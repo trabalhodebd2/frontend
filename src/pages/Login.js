@@ -1,7 +1,8 @@
 import React from "react"
-import { getValuesOfInputs } from "../controller/elements"
+import { getValuesOfInputs } from "../services/elements"
 import { Link, useNavigate } from 'react-router-dom'
-import { signIn } from "../controller/auttentication"
+import { signIn } from "../services/auttentication"
+import { getToken } from "../services/token"
 
 import ContentForm from '../components/ContentForm'
 import DivButton from '../components/DivButton'
@@ -13,12 +14,19 @@ import Logo from '../components/Logo'
 export default () => {
     const navigate = useNavigate()
 
-    const loginUser = (event) => {
+    const loginUser = async (event) => {
+        event.preventDefault()
+        
         const form = event.currentTarget
         const [name, pass] = getValuesOfInputs(form)
+        const token = await getToken(name, pass)
         
-        signIn()
-        navigate("/home")
+        if (token.access) {
+            signIn(token.refresh)
+            navigate("/home")
+        } else {
+            alert("O usuario ou senha estão errados")
+        }
     }
 
     return (
