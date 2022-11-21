@@ -1,6 +1,7 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 
+import ContentForm from '../components/ContentForm'
 import DivButton from '../components/DivButton'
 import Title from '../components/Title'
 import Input from '../components/Input'
@@ -15,7 +16,7 @@ export default () => {
     }
 
     return (
-        <>
+        <ContentForm>
             <Form callback={verifyEmail}>
                 <Logo />
                 
@@ -24,6 +25,6 @@ export default () => {
 
                 <DivButton hrefCancel="/login" />
             </Form>
-        </>
+        </ContentForm>
     )
 }

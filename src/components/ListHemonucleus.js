@@ -5,7 +5,6 @@ export default (props) => {
     const textClass = "border-secondary border-solid text-xl"
     const classIndex = textClass + " border-r w-10 py-2 text-secondary grid place-items-center"
     const classInfoName = textClass + " p-2 pl-3 text-secondary-dark"
-    console.log(list)
 
     const listElements = list.map((element, index) => {
         if (index === 0) return (
