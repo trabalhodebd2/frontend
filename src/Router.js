@@ -28,6 +28,8 @@ export default () => (
         <Route path="/recuperar_conta" element={<RetrieveAccount />} /> 
         
         <Route path="/home" element={<Home />} /> 
+
+        <Route path="/home/:id" element={<Home />} /> 
         
         <Route path="/account" element={<Account />} /> 
         

@@ -36,3 +36,19 @@ export const getHemos = async () => {
 
     return obj
 }
+
+export const getHemosById = async (id) => {
+    const config = {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+            // "Authorization": `Bearer ${await refreshToken()}`
+		},
+	};
+
+    const obj = await fetch(`${hostApi}/api/hemos/${id}`, config)
+        .then(res => res.json())
+        .catch(err => console.log(`Ocorreu um error: ${err}`))
+
+    return obj
+}

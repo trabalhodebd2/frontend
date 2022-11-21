@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { Navigate } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import { isAuthenticated } from "../services/auttentication"
-import { getHemos } from "../services/crudHemos"
+import { getHemos, getHemosById } from "../services/crudHemos"
 
 import UserPhoto from "../components/UserPhoto"
 import MenuLeft from "../components/MenuLeft"
@@ -11,14 +11,38 @@ import Map from "../components/Map"
 
 export default () => {
     const [listHemos, setListHemos] = useState([])
-    
-    const promise = new Promise((resolve) => resolve());
+
+    const { id } = useParams()
 
     useEffect(() => {
-        promise.then(setListHemos(getHemos()))
-            .then(console.log(listHemos))
+        if (id) {
+            const updateList = async () => {
+                const hemo = await getHemosById(id)
+                setListHemos([hemo])
+            }
+    
+            updateList()
+        } else {
+            const updateList = async () => {
+                const allHemos = await getHemos()
+                setListHemos(allHemos.features)
+            }
+    
+            updateList()
+        }
+        
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
+
+    const funcCenter = () => {
+        const element = listHemos[0]
+        if (element) {
+            return {
+                lat: element.geometry.coordinates[0],
+                lng: element.geometry.coordinates[1]
+            }
+        }
+    }
         
     return (
         <>
@@ -29,7 +53,7 @@ export default () => {
                     <UserPhoto />
                 </div>
                 <Cards />
-                <Map listHemos={listHemos} />
+                <Map listHemos={listHemos} center={funcCenter()} />
             </section>
         </>
     )

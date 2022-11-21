@@ -29,7 +29,7 @@ export default () => {
         const objHemo = await postHemos(name, long, lati)
 
         if (objHemo.id) {
-            navigate("/home")
+            navigate(`/home/${objHemo.id}`)
         } else {
             alert("Ocorreu um error ao registrar hemonucleo")
         }

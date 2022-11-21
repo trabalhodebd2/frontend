@@ -8,7 +8,6 @@ export default (props) => {
     console.log(list)
 
     const listElements = list.map((element, index) => {
-        console.log(element)
         if (index === 0) return (
             <label className={textClass + " flex"}>
                 <input type="radio" value={element.id} className="hidden" />

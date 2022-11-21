@@ -29,6 +29,7 @@ export default () => {
 
     const viewHemo = (event) => {
         event.preventDefault()
+        // const const getInputRadioChecked()
         navigate("/home")
     }
 
