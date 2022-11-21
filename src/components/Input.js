@@ -10,7 +10,7 @@ export default (props) => {
     const [className, setClassName] = useState(textClass)
     const [value, setValue] = useState(props.value || "")
     const [type, setType] = useState(props.type || "text")
-
+ 
     useEffect(() => {
         if (type === "text") {
             setPlaceholder(props.placeholder || "Ex: João")

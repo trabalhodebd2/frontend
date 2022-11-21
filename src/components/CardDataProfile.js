@@ -19,20 +19,20 @@ export default (props) => {
         )
     })
 
-    const textClass = ("text-base p-8 fixed z-10 shadow h-[300px] w-[300px] top-50 right-0 bg-white rounded-2xl")
-        // + ` ${props.status ? "translate-x-4" : "translate-x-0"}`)
-
-    const status = props.parentToChild
+    const textClass = ("text-base p-8 fixed z-10 shadow h-[300px] w-[300px] top-40 right-0 bg-white rounded-2xl"
+        + ` ${props.status ? "translate-x-0" : "translate-x-[110%]"} duration-500`)
 
     return (
         <div className={textClass}>
             <div className="grid gap-4">
                 {listElements}
             </div>
-            <Link
-                to="/account"
-                className="my-[11.5rem] mx-auto text-secondary text-center underline"
-            >Editar informações</Link>
+            <div className="w-full my-11 flex justify-center">
+                <Link
+                    to="/account"
+                    className="text-secondary underline hover:text-secondary-dark duration-300"
+                >Editar informações</Link>
+            </div>
         </div>
     )
 }
