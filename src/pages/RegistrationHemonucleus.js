@@ -1,7 +1,8 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
 import { getValuesOfElement } from "../services/elements"
 import { isAuthenticated } from "../services/auttentication"
+import { getCountry, getCity } from "../services/apiIbge"
 import { postHemos } from "../services/crudHemos"
 
 import UserPhoto from "../components/UserPhoto"
@@ -15,7 +16,23 @@ import Form from "../components/Form"
 export default () => {
     const navigate = useNavigate()
 
+    const [listCountry, setCountry] = useState([])
+
+    const customListCountry = (list) => {
+        return list.map(item => {
+            return { name: item.nome, value: item.sigla }
+        })
+    }
+
     useEffect(() => {
+        const updateListCountry = async () => {
+            const allCountry = await getCountry()
+            const customList = customListCountry(allCountry)
+            setCountry(customList)
+        }
+
+        updateListCountry()
+
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
@@ -49,12 +66,7 @@ export default () => {
                     <Input title="Nome" placeholder=" " />
 
                     <div className="flex gap-10 w-full">
-                        <Select 
-                            title="Estado" 
-                            options={[
-                            {name: "Paraiba", value: "PB"}, 
-                            {name: "Pernanbuco", value: "PE"}
-                        ]} />
+                        <Select title="Estado" options={listCountry} />
                         <Select title="Cidade" options={[
                             {name: "Sousa", value: "Sousa"}, 
                             {name: "Cajazeiras", value: "Cajazeiras"}

@@ -16,7 +16,7 @@ export const postHemos = async (title, lat, long, uf, city) => {
 
     const obj = await fetch(`${hostApi}/api/hemos/`, config)
         .then(res => res.json())
-        .catch(err => console.log(`Ocorreu um error: ${err}`))
+        .catch(err => console.log(`Ocorreu um error ao registrar os da`))
 
     return obj
 }
