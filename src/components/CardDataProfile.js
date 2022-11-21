@@ -19,8 +19,8 @@ export default (props) => {
         )
     })
 
-    const textClass = ("text-base p-8 fixed z-10 shadow h-[300px] w-[300px] top-40 right-0 bg-white rounded-2xl"
-        + ` ${props.status ? "translate-x-0" : "translate-x-[110%]"} duration-500`)
+    const textClass = ("text-base p-8 fixed z-10 shadow-card h-[300px] w-[300px] top-40 right-16 bg-white rounded-2xl"
+        + ` ${props.status ? "translate-x-0" : "translate-x-[150%]"} duration-500`)
 
     return (
         <div className={textClass}>
