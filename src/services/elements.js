@@ -9,11 +9,10 @@ export const getValuesOfElement = (elementForm, tagElement) => {
     return listValues
 }
 
-export const getInputRadioChecked = (elementForm) => {
+export const getValueInputRadioChecked = (elementForm) => {
     const elements = elementForm.querySelectorAll(`input[type="radio"]`)
     
     for (const element of elements) {
         if (element.checked) return element.value
-        console.log(element)
     }
 }
