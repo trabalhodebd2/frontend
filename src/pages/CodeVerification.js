@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import { getValuesOfInputs } from "../services/elements"
+import { getValuesOfElement } from "../services/elements"
 
 import ContentForm from '../components/ContentForm'
 import InputToken from '../components/InputToken'
@@ -14,7 +14,7 @@ export default () => {
 
     const verifyCode = (event) => {
         const form = event.currentTarget
-        const listValues = getValuesOfInputs(form)
+        const listValues = getValuesOfElement(form, "input")
         const number = listValues.join()
 
         navigate("/recuperar_conta")

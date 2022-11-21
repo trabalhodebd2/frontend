@@ -2,7 +2,7 @@ import { refreshToken } from "./token";
 
 const hostApi = process.env.REACT_APP_LINK_API
 
-export const postHemos = async (title, lat, long) => {
+export const postHemos = async (title, lat, long, uf, city) => {
     const geometry = { "type": "Point", "coordinates": [Number(lat), Number(long)] }
 
     const config = {
@@ -11,7 +11,7 @@ export const postHemos = async (title, lat, long) => {
 			"Content-Type": "application/json",
             // "Authorization": `Bearer ${await refreshToken()}`
 		},
-        body: JSON.stringify({title, geometry})
+        body: JSON.stringify({title, geometry, uf, city})
 	};
 
     const obj = await fetch(`${hostApi}/api/hemos/`, config)

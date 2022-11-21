@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
 import { isAuthenticated } from "../services/auttentication"
-import { getValuesOfInputs } from "../services/elements"
+import { getValuesOfElement } from "../services/elements"
 import { getUser } from "../services/crudUser"
 
 import UserPhoto from "../components/UserPhoto"
@@ -36,7 +36,7 @@ export default () => {
 
     const editData = (event) => {
         const form = event.currentTarget
-        const [name, email, dateBirth, telephone, pass] = getValuesOfInputs(form)
+        const [name, email, dateBirth, telephone, pass] = getValuesOfElement(form, "input")
         const sex = form.querySelector("select")
         
         navigate("/home")

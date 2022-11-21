@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
 import { isAuthenticated } from "../services/auttentication"
+import { getInputRadioChecked } from "../services/elements"
 import { getHemos } from "../services/crudHemos"
 
 import ListHemonucleus from "../components/ListHemonucleus"
@@ -29,8 +30,13 @@ export default () => {
 
     const viewHemo = (event) => {
         event.preventDefault()
-        // const const getInputRadioChecked()
-        navigate("/home")
+        const form = event.currentTarget
+        const valueId = getInputRadioChecked(form)
+        if (valueId) {
+            navigate(`/home/${valueId}`)
+        } else {
+            navigate("/home")
+        }
     }
 
     return (

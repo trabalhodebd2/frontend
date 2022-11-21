@@ -1,5 +1,5 @@
 import React from "react"
-import { getValuesOfInputs } from "../services/elements"
+import { getValuesOfElement } from "../services/elements"
 import { Link, useNavigate } from 'react-router-dom'
 import { signIn } from "../services/auttentication"
 import { getToken } from "../services/token"
@@ -18,7 +18,7 @@ export default () => {
         event.preventDefault()
         
         const form = event.currentTarget
-        const [name, pass] = getValuesOfInputs(form)
+        const [name, pass] = getValuesOfElement(form, "input")
         const token = await getToken(name, pass)
         
         if (token.access) {

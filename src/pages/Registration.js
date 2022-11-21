@@ -1,7 +1,7 @@
 import React from "react"
 import { useNavigate } from 'react-router-dom'
 import { signIn } from "../services/auttentication"
-import { getValuesOfInputs } from "../services/elements"
+import { getValuesOfElement } from "../services/elements"
 import { postUser } from "../services/crudUser"
 import { getToken } from "../services/token"
 
@@ -19,7 +19,7 @@ export default () => {
         event.preventDefault()
 
         const form = event.currentTarget
-        const [email, name, pass, retryPass] = getValuesOfInputs(form)
+        const [email, name, pass, retryPass] = getValuesOfElement(form, "input")
 
         if (pass !== retryPass) {
             alert("As duas senhas devem ser iguais")

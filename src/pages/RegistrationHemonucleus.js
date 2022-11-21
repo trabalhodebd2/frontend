@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { Navigate, useNavigate } from 'react-router-dom'
-import { getValuesOfInputs } from "../services/elements"
+import { getValuesOfElement } from "../services/elements"
 import { isAuthenticated } from "../services/auttentication"
 import { postHemos } from "../services/crudHemos"
 
@@ -23,10 +23,10 @@ export default () => {
         event.preventDefault()
 
         const form = event.currentTarget
-        const [name, long, lati] = getValuesOfInputs(form)
-        // const [] = getValuesOfSelect(form)
+        const [name, long, lati] = getValuesOfElement(form, "input")
+        const [uf, city] = getValuesOfElement(form, "select")
 
-        const objHemo = await postHemos(name, long, lati)
+        const objHemo = await postHemos(name, long, lati, uf, city)
 
         if (objHemo.id) {
             navigate(`/home/${objHemo.id}`)

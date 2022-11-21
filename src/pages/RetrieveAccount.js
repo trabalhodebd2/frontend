@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import { getValuesOfInputs } from "../services/elements"
+import { getValuesOfElement } from "../services/elements"
 
 import ContentForm from '../components/ContentForm'
 import DivButton from '../components/DivButton'
@@ -16,7 +16,7 @@ export default () => {
         event.preventDefault()
 
         const form = event.currentTarget
-        const [pass, retryPass] = getValuesOfInputs(form)
+        const [pass, retryPass] = getValuesOfElement(form, "input")
 
         if (pass === retryPass) {
             navigate("/login")

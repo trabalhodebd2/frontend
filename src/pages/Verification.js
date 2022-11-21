@@ -10,7 +10,7 @@ import Logo from '../components/Logo'
 export default () => {
     const navigate = useNavigate()
 
-    const verifyEmail = (event) => {
+    const verifyEmail = () => {
         navigate("/codigo_verificacao")
     }
 
