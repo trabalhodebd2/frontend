@@ -15,19 +15,12 @@ import Form from "../components/Form"
 export default () => {
     const navigate = useNavigate()
 
-    const [user, setUser] = useState({
-        full_name: "José da Silva Júnior",
-        email: "jose@gmail.com",
-        sex: "M",
-        date_birthday: "2002-05-21",
-        phone: "+55 (83) 99101-7224",
-        password: "************"
-    })
+    const [user, setUser] = useState({})
 
     useEffect(() => {
         const updateUser = async () => {
-            const user = await getUser()
-            setUser(user)
+            const userObj = await getUser()
+            setUser(userObj)
         }
     
         updateUser()

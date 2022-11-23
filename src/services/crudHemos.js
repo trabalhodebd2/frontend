@@ -32,6 +32,7 @@ export const getHemos = async () => {
 
     const obj = await fetch(`${hostApi}/api/hemos/`, config)
         .then(res => res.json())
+        .then(all => all.features)
         .catch(err => console.log(`Ocorreu um error: ${err}`))
 
     return obj
@@ -46,9 +47,9 @@ export const getHemosById = async (id) => {
 		},
 	};
 
-    const obj = await fetch(`${hostApi}/api/hemos/${id}`, config)
+    const list = await fetch(`${hostApi}/api/hemos/${id}`, config)
         .then(res => res.json())
         .catch(err => console.log(`Ocorreu um error: ${err}`))
 
-    return obj
+    return list
 }

@@ -26,7 +26,7 @@ export default () => {
         } else {
             const updateList = async () => {
                 const allHemos = await getHemos()
-                setListHemos(allHemos.features)
+                setListHemos(allHemos)
             }
     
             updateList()
