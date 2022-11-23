@@ -48,7 +48,7 @@ export default () => {
             <section className="w-full h-full p-[3.75rem] page-start">
                 <div className="w-full mb-9 flex">
                     <Search />
-                    <UserPhoto />
+                    <UserPhoto haveCardData={false} />
                 </div>
 
                 <Form className="max-w-full p-[3.75rem]" callback={editData}>

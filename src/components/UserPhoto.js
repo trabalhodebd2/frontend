@@ -10,6 +10,8 @@ export default (props) => {
     const textClass = "rounded-full h-[3.75rem] cursor-pointer"
 
     const [active, setActive] = useState(false)
+    const cardData = props.haveCardData === undefined ? 
+        <CardDataProfile status={active} /> : <></>
 
     if (size === "small") {
         return (
@@ -20,7 +22,7 @@ export default (props) => {
                     alt="Usuario" 
                     onClick={() => setActive(!active)}
                 />
-                <CardDataProfile status={active} />
+                {cardData}
             </>
         )
     }

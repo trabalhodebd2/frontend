@@ -31,6 +31,7 @@ export const refreshToken = () => {
 
     const newToken = fetch(`${hostApi}/api/refresh_token/`, config)
         .then(res => res.json())
+        .then(res => res.access)
         .catch(err => console.log(`Ocorreu um error: ${err}`))
 
     return newToken

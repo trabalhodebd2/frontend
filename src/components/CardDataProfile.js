@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { getUser } from "../services/crudUser";
+import { getUser } from "../services/crudUser";
 
 export default (props) => {
-    // const objUser = getUser()
-    const list = [
+    const [list, setList] = useState([
         {title: "Nome", value: "José da Silva Júnior"},
         {title: "E-mail", value: "jose@gmail.com"},
         {title: "Telefone", value: "+55 (83) 99101-7224"}
-    ]
+    ])
+
+    useEffect(() => {
+        const updateList = async () => {
+            const user = await getUser()
+            setList([
+                {title: "Nome", value: user.full_name || "[Sem Nome]"},
+                {title: "E-mail", value: user.email || "[Sem Email]"},
+                {title: "Telefone", value: user.phone || "[Sem Telefone]"}
+            ])
+        }
+
+        updateList()
+    }, [])
 
     const listElements = list.map(element => {
         return (
