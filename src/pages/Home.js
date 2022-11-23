@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Navigate, useParams } from 'react-router-dom'
 import { isAuthenticated } from "../services/auttentication"
 import { getHemos, getHemosById } from "../services/crudHemos"
+import { Marker } from "@react-google-maps/api"
 
 import UserPhoto from "../components/UserPhoto"
 import MenuLeft from "../components/MenuLeft"
@@ -34,14 +35,28 @@ export default () => {
         if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
+    const objCoord = (element) => {
+        return {
+            lat: element.geometry.coordinates[0],
+            lng: element.geometry.coordinates[1]
+        }
+    }
+
     const funcCenter = () => {
         const element = listHemos[0]
         if (element) {
-            return {
-                lat: element.geometry.coordinates[0],
-                lng: element.geometry.coordinates[1]
-            }
+            return objCoord(element)
         }
+    }
+
+    const loadMarkers = () => {
+        const listMarker = listHemos.map(element => {
+            return <Marker 
+                position={objCoord(element)} 
+                label={element.properties.title}
+            ></Marker>
+        })
+        return listMarker
     }
         
     return (
@@ -53,7 +68,7 @@ export default () => {
                     <UserPhoto />
                 </div>
                 <Cards />
-                <Map listHemos={listHemos} center={funcCenter()} />
+                <Map elements={loadMarkers()} center={funcCenter()} />
             </section>
         </>
     )
