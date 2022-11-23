@@ -29,7 +29,10 @@ export default () => {
         const form = event.currentTarget
         const [name] = getValuesOfElement(form, "input")
 
-        const objHemo = await postHemos(name, marker.props.position)
+        const lat = marker.props.position.lat()
+        const lng = marker.props.position.lng()
+
+        const objHemo = await postHemos(name, lat, lng)
 
         if (objHemo.id) {
             navigate(`/home/${objHemo.id}`)
@@ -40,9 +43,6 @@ export default () => {
 
     const updateMarker = (event) => {
         setMarker(<Marker position={event.latLng}></Marker>)
-        // console.log(event)
-        // console.log(marker.props.position)
-        // console.log(marker.props.position.lat([[Scopes]])[0].e)
     }
 
     return (
