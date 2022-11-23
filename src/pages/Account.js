@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { isAuthenticated } from "../services/auttentication"
 import { getValuesOfElement } from "../services/elements"
 import { getUser } from "../services/crudUser"
@@ -11,13 +11,12 @@ import Select from "../components/Select"
 import Search from "../components/Search"
 import Input from "../components/Input"
 import Form from "../components/Form"
-import { refreshToken } from "../services/token"
 
 export default () => {
     const navigate = useNavigate()
 
     const [user, setUser] = useState({
-        username: "José da Silva Júnior",
+        full_name: "José da Silva Júnior",
         email: "jose@gmail.com",
         sex: "M",
         date_birthday: "2002-05-21",
@@ -25,12 +24,14 @@ export default () => {
         password: "************"
     })
 
-    const promise = new Promise((resolve) => resolve());
-
     useEffect(() => {
-        setUser(promise
-            .then(getUser)
-        )
+        const updateUser = async () => {
+            const user = await getUser()
+            setUser(user)
+        }
+    
+        updateUser()
+
         if (!isAuthenticated()) return navigate("/login")
     }, [])
 
@@ -58,7 +59,7 @@ export default () => {
                         </picture>
 
                         <section className="grid grid-cols-2 grid-rows-3 gap-x-8 gap-y-4">
-                            <Input title="Nome" value={user.username} />
+                            <Input title="Nome" value={user.full_name} />
                             <Input title="email" type="email" value={user.email} />
                             <Select 
                                 title="Sexo" 

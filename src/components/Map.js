@@ -20,7 +20,9 @@ export default React.memo((props) => {
   }
 
   const config = {
-    setZoomControlsEnabled: false,
+    minZoom: 4,
+    maxZoom: 15,
+    disableDefaultUI: true,
   }
 
   return isLoaded ? (

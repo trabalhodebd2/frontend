@@ -42,7 +42,7 @@ export default () => {
     }
 
     const updateMarker = (event) => {
-        setMarker(<Marker position={event.latLng}></Marker>)
+        setMarker(<Marker position={event.latLng} animation="BOUNCE"></Marker>)
     }
 
     return (
