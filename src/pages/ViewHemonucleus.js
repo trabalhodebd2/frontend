@@ -20,7 +20,7 @@ export default () => {
     useEffect(() => {
         const updateList = async () => {
             const allHemos = await getHemos()
-            setListHemos(allHemos.features)
+            setListHemos(allHemos)
         }
 
         updateList()

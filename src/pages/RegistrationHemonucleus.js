@@ -18,6 +18,7 @@ export default () => {
     const navigate = useNavigate()
 
     const [marker, setMarker] = useState()
+    const [centerMap, setCenterMap] = useState()
 
     useEffect(() => {
         if (!isAuthenticated()) return <Navigate to="/login/" />
@@ -43,6 +44,7 @@ export default () => {
 
     const updateMarker = (event) => {
         setMarker(<Marker position={event.latLng} animation="BOUNCE"></Marker>)
+        setCenterMap(event.latLng)
     }
 
     return (
@@ -62,6 +64,7 @@ export default () => {
                         elements={marker} 
                         onClick={updateMarker} 
                         height="27.9rem" 
+                        center={centerMap}
                     />
 
                     <DivButton 
