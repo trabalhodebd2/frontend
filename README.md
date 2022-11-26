@@ -23,7 +23,8 @@ npm install
 Crie um arquivo .env na raiz e adicione a sua chave de API do google maps
 
 ```
-REACT_APP_KEY_GOOGLE_MAPS = SUA_CHAVE_DE_API_DO_GOOGLE_MAPS
+REACT_APP_KEY_GOOGLE_MAPS = CHAVE_API # Chave de Api do google maps
+REACT_APP_LINK_API = http://localhost:8000 # Link do host do backend
 ```
 
 Rode a aplicação e espere entrar altomaticamente
