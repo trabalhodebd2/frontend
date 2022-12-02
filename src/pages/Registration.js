@@ -26,16 +26,16 @@ export default () => {
             return;
         }
 
-        const promise = new Promise((resolve) => resolve());
+        const [obj, status] = await postUser(email, name, pass)
+        console.log(obj)
+        console.log(status)
 
-        const obj = await postUser(email, name, pass)
-
-        if (obj.username) {
+        if (status === 201) {
             const token = getToken(name, pass)
             signIn(token.refresh)
             navigate("/home")
         } else {
-            alert(obj.email)
+            alert("Usuario ou Email já existente")
         }
     }
 

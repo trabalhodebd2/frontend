@@ -16,7 +16,7 @@ export const postHemos = async (title, lat, lng) => {
 
     const obj = await fetch(`${hostApi}/api/hemos/`, config)
         .then(res => res.json())
-        .catch(err => console.log(`Ocorreu um error ao registrar os da`))
+        .catch(() => alert("Error ao se conectar ao Servidor BackEnd"))
 
     return obj
 }
@@ -33,7 +33,7 @@ export const getHemos = async () => {
     const obj = await fetch(`${hostApi}/api/hemos/`, config)
         .then(res => res.json())
         .then(all => all.features)
-        .catch(err => console.log(`Ocorreu um error: ${err}`))
+        .catch(() => alert("Error ao se conectar ao Servidor BackEnd"))
 
     return obj
 }
@@ -49,7 +49,7 @@ export const getHemosById = async (id) => {
 
     const list = await fetch(`${hostApi}/api/hemos/${id}`, config)
         .then(res => res.json())
-        .catch(err => console.log(`Ocorreu um error: ${err}`))
+        .catch(() => alert("Error ao se conectar ao Servidor BackEnd"))
 
     return list
 }
