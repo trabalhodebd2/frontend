@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import { signIn } from "../services/auttentication"
 import { getValuesOfElement } from "../services/elements"
 import { postUser } from "../services/crudUser"
 import { getToken } from "../services/token"
 
+import MensageError from "../components/MensageError"
 import ContentForm from '../components/ContentForm'
 import DivButton from "../components/DivButton"
 import Title from '../components/Title'
@@ -15,6 +16,8 @@ import Logo from '../components/Logo'
 export default () => {
     const navigate = useNavigate()
 
+    const [elementError, setElementError] = useState(<></>)
+
     const registreUser = async (event) => {
         event.preventDefault()
 
@@ -22,7 +25,8 @@ export default () => {
         const [email, name, pass, retryPass] = getValuesOfElement(form, "input")
 
         if (pass !== retryPass) {
-            alert("As duas senhas devem ser iguais")
+            const textError = "As duas senhas devem ser iguais"
+            setElementError(<MensageError text={textError} />)
             return;
         }
 
@@ -35,7 +39,8 @@ export default () => {
             signIn(token.refresh)
             navigate("/home")
         } else {
-            alert("Usuario ou Email já existente")
+            const textError = "Email ou Usuario já existente"
+            setElementError(<MensageError text={textError} />)
         }
     }
 
@@ -50,6 +55,8 @@ export default () => {
                 <Input title="Usuário" />
                 <Input title="Senha" type="password" />
                 <Input title="Digite a senha novamente" type="password" />
+
+                {elementError}
 
                 <DivButton text="Criar" hrefCancel="/login" />
             </Form>
