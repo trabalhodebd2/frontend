@@ -20,7 +20,7 @@ export default (props) => {
     )
 
     return (
-        <label className={classLabel}>
+        <label className={classLabel} onClick={props.onClick}>
             <input type="radio" value={props.value} className="hidden" />
             <p className={classIndex}>{index}</p>
             <p className={classInfoName}>{props.text}</p>
