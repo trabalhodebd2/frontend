@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Navigate, useParams } from 'react-router-dom'
-import { isAuthenticated } from "../services/auttentication"
+import { useParams } from 'react-router-dom'
 import { getHemos, getHemosById } from "../services/crudHemos"
 import { Marker } from "@react-google-maps/api"
 
@@ -31,8 +30,6 @@ export default () => {
     
             updateList()
         }
-        
-        if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
     const objCoord = (element) => {

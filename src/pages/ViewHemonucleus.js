@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react"
-import { Navigate, useNavigate } from 'react-router-dom'
-import { isAuthenticated } from "../services/auttentication"
+import { useNavigate } from 'react-router-dom'
 import { getValueInputRadioChecked } from "../services/elements"
 import { getHemos } from "../services/crudHemos"
 
@@ -24,8 +23,6 @@ export default () => {
         }
 
         updateList()
-
-        if (!isAuthenticated()) return <Navigate to="/login/" />
     }, [])
 
     const viewHemo = (event) => {

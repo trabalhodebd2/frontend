@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react"
-import { Navigate, useNavigate } from 'react-router-dom'
+import React, { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 import { getValuesOfElement } from "../services/elements"
-import { isAuthenticated } from "../services/auttentication"
 import { postHemos } from "../services/crudHemos"
 
 import UserPhoto from "../components/UserPhoto"
@@ -19,10 +18,6 @@ export default () => {
 
     const [marker, setMarker] = useState()
     const [centerMap, setCenterMap] = useState()
-
-    useEffect(() => {
-        if (!isAuthenticated()) return <Navigate to="/login/" />
-    }, [])
 
     const registreHemo = async (event) => {
         event.preventDefault()

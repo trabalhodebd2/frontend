@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react"
 import { useNavigate } from 'react-router-dom'
-import { isAuthenticated } from "../services/auttentication"
 import { getValuesOfElement } from "../services/elements"
 import { getUser } from "../services/crudUser"
 
@@ -24,8 +23,6 @@ export default () => {
         }
     
         updateUser()
-
-        if (!isAuthenticated()) return navigate("/login")
     }, [])
 
     const editData = (event) => {
