@@ -14,8 +14,8 @@ import Account from './pages/Account'
 import Login from './pages/Login'
 import Home from './pages/Home'
 
-const elementPublic = (Component, restricted = false) => {
-    if (isAuthenticated() && restricted) {
+const elementRestricted = (Component) => {
+    if (isAuthenticated()) {
         return <Navigate to="/home" />
     }
     return <Component />
@@ -32,15 +32,15 @@ export default () => (
     <Routes>
         <Route path="/" element={<Loading />} /> 
         
-        <Route path="/login" element={elementPublic(Login, true)} /> 
+        <Route path="/login" element={elementRestricted(Login)} /> 
 
-        <Route path="/cadastro" element={elementPublic(Registration, true)} /> 
+        <Route path="/cadastro" element={elementRestricted(Registration)} /> 
         
-        <Route path="/verificacao" element={elementPublic(Verification, true)} /> 
+        <Route path="/verificacao" element={elementRestricted(Verification)} /> 
         
-        <Route path="/codigo_verificacao" element={elementPublic(CodeVerification, true)} /> 
+        <Route path="/codigo_verificacao" element={elementRestricted(CodeVerification)} /> 
         
-        <Route path="/recuperar_conta" element={elementPublic(RetrieveAccount, true)} /> 
+        <Route path="/recuperar_conta" element={elementRestricted(RetrieveAccount)} /> 
         
         <Route path="/home" element={elementPrivate(Home)} /> 
 
