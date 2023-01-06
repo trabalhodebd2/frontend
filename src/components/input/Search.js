@@ -1,7 +1,7 @@
 import React from "react"
 
-import search from "../img/search.svg"
-import searchWhite from "../img/search-white.svg"
+import search from "../../img/search.svg"
+import searchWhite from "../../img/search-white.svg"
 
 export default (props) => {
     const type = props.type || 1

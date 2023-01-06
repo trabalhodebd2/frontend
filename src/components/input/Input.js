@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import eye from "../img/eye.svg"
-import eyeOff from "../img/eye-off.svg"
+import eye from "../../img/eye.svg"
+import eyeOff from "../../img/eye-off.svg"
 
 export default (props) => {
     const textClass = ("bg-white-100 w-full h-12 rounded-xl p-4 text-sm")

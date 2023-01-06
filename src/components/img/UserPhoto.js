@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 
-import photoUserSmall from "../img/photoUser-small.jpg"
-import photoUser from "../img/photoUser.jpg"
+import photoUserSmall from "../../img/photoUser-small.jpg"
+import photoUser from "../../img/photoUser.jpg"
 
-import CardDataProfile from "./CardDataProfile"
+import CardDataProfile from "../cards/CardDataProfile"
 
 export default (props) => {
     const size = props.size || "small"

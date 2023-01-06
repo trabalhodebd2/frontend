@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { getValuesOfElement } from "../services/elements"
 import { postHemos } from "../services/crudHemos"
 
-import UserPhoto from "../components/UserPhoto"
-import DivButton from "../components/DivButton"
+import PrivateRoute from "../components/Autheticate/PrivateRoute"
+import UserPhoto from "../components/img/UserPhoto"
+import DivButton from "../components/button/DivButton"
 import MenuLeft from "../components/MenuLeft"
-import Input from '../components/Input'
+import Input from '../components/input/Input'
 import Title from '../components/Title'
-import Form from "../components/Form"
+import Form from "../components/forms/Form"
 import Map from "../components/Map"
 
 import { Marker } from "@react-google-maps/api"
@@ -43,7 +44,7 @@ export default () => {
     }
 
     return (
-        <>
+        <PrivateRoute>
             <MenuLeft button_position={2} />
             <section className="w-full h-full p-[3.75rem] page-start">
                 <div className="w-full mb-9 flex justify-end">
@@ -69,6 +70,6 @@ export default () => {
                     />
                 </Form>
             </section>
-        </>
+        </PrivateRoute>
     )
 }

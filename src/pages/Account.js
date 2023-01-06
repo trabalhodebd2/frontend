@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { getValuesOfElement } from "../services/elements"
 import { getUser } from "../services/crudUser"
 
-import UserPhoto from "../components/UserPhoto"
-import DivButton from "../components/DivButton"
+import PrivateRoute from "../components/Autheticate/PrivateRoute"
+import UserPhoto from "../components/img/UserPhoto"
+import DivButton from "../components/button/DivButton"
 import MenuLeft from "../components/MenuLeft"
-import Select from "../components/Select"
-import Search from "../components/Search"
-import Input from "../components/Input"
-import Form from "../components/Form"
+import Select from "../components/input/Select"
+import Search from "../components/input/Search"
+import Input from "../components/input/Input"
+import Form from "../components/forms/Form"
 
 export default () => {
     const navigate = useNavigate()
@@ -34,7 +35,7 @@ export default () => {
     }
 
     return (
-        <>
+        <PrivateRoute>
             <MenuLeft />
             <section className="w-full h-full p-[3.75rem] page-start">
                 <div className="w-full mb-9 flex">
@@ -72,6 +73,6 @@ export default () => {
                         />
                 </Form>
             </section>
-        </>
+        </PrivateRoute>
     )
 }

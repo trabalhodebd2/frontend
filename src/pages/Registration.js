@@ -5,13 +5,14 @@ import { getValuesOfElement } from "../services/elements"
 import { postUser } from "../services/crudUser"
 import { getToken } from "../services/token"
 
-import MensageError from "../components/MensageError"
-import ContentForm from '../components/ContentForm'
-import DivButton from "../components/DivButton"
+import RestrictRoute from "../components/Autheticate/RestrictRoute"
+import MensageError from "../components/forms/MensageError"
+import ContentForm from '../components/forms/ContentForm'
+import DivButton from "../components/button/DivButton"
 import Title from '../components/Title'
-import Input from '../components/Input'
-import Form from '../components/Form'
-import Logo from '../components/Logo'
+import Input from '../components/input/Input'
+import Form from '../components/forms/Form'
+import Logo from '../components/img/Logo'
 
 export default () => {
     const navigate = useNavigate()
@@ -45,21 +46,23 @@ export default () => {
     }
 
     return (
-        <ContentForm>
-            <Form callback={registreUser}>
-                <Logo />
-                
-                <Title text="Criar Conta" />
+        <RestrictRoute>
+            <ContentForm>
+                <Form callback={registreUser}>
+                    <Logo />
+                    
+                    <Title text="Criar Conta" />
 
-                <Input title="Email" type="email" />
-                <Input title="Usuário" />
-                <Input title="Senha" type="password" />
-                <Input title="Digite a senha novamente" type="password" />
+                    <Input title="Email" type="email" />
+                    <Input title="Usuário" />
+                    <Input title="Senha" type="password" />
+                    <Input title="Digite a senha novamente" type="password" />
 
-                {elementError}
+                    {elementError}
 
-                <DivButton text="Criar" hrefCancel="/login" />
-            </Form>
-        </ContentForm>
+                    <DivButton text="Criar" hrefCancel="/login" />
+                </Form>
+            </ContentForm>
+        </RestrictRoute>
     )
 }

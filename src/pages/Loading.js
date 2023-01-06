@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 import { isAuthenticated } from '../services/auttentication'
 
-import Logo from "../components/Logo"
+import Logo from "../components/img/Logo"
 
 export default () => {
     const navigate = useNavigate()

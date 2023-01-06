@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getUser } from "../services/crudUser";
+import { getUser } from "../../services/crudUser";
 
 export default (props) => {
     const [list, setList] = useState([

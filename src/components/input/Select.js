@@ -1,4 +1,4 @@
-import React, { createElement } from "react";
+import React from "react";
 
 export default (props) => {
     const textClass = "bg-white-100 w-full h-12 rounded-xl p-4 text-sm"

@@ -1,15 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import eye from "../img/eye.svg"
-import home from "../img/home.svg"
-import plus from "../img/plus-square.svg"
+import eye from "../../img/eye.svg"
+import home from "../../img/home.svg"
+import plus from "../../img/plus-square.svg"
 
 // Solução Temporaria
 
-import eyeWhite from "../img/eye-white.svg"
-import homeWhite from "../img/home-white.svg"
-import plusWhite from "../img/plus-square-white.svg"
+import eyeWhite from "../../img/eye-white.svg"
+import homeWhite from "../../img/home-white.svg"
+import plusWhite from "../../img/plus-square-white.svg"
 
 export default (props) => {
     const list = [

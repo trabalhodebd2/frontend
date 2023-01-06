@@ -1,7 +1,7 @@
 import React from "react"
 
-import MenuButtons from "./MenuButtons"
-import Logo from "./Logo"
+import MenuButtons from "./button/MenuButtons"
+import Logo from "./img/Logo"
 import Exit from "./Exit"
 
 export default (props) => {

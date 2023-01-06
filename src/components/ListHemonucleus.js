@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Label from "./Label";
+import Label from "./input/Label";
 
 export default (props) => {
     const list = props.list || []

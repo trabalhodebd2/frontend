@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom'
 import { getHemos, getHemosById } from "../services/crudHemos"
 import { Marker } from "@react-google-maps/api"
 
-import UserPhoto from "../components/UserPhoto"
+import PrivateRoute from "../components/Autheticate/PrivateRoute"
+import UserPhoto from "../components/img/UserPhoto"
 import MenuLeft from "../components/MenuLeft"
-import Search from "../components/Search"
-import Cards from "../components/Cards"
+import Search from "../components/input/Search"
+import Cards from "../components/cards/Cards"
 import Map from "../components/Map"
 
 export default () => {
@@ -57,7 +58,7 @@ export default () => {
     }
         
     return (
-        <>
+        <PrivateRoute>
             <MenuLeft button_position={1} />
             <section className="w-full h-full p-[3.75rem] page-start">
                 <div className="w-full mb-9 flex">
@@ -67,6 +68,6 @@ export default () => {
                 <Cards />
                 <Map elements={loadMarkers()} center={funcCenter()} />
             </section>
-        </>
+        </PrivateRoute>
     )
 }

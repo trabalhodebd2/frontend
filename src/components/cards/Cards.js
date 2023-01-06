@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { getHemos } from "../services/crudHemos"
-import { getHemosByCity, getHemosByUf } from "../services/dataHemos"
+import { getHemos } from "../../services/crudHemos"
+import { getHemosByCity, getHemosByUf } from "../../services/dataHemos"
 
 import Card from "./Card"
 
